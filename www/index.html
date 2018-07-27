@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Welcome!</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./icons/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./icons/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./icons/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="./icons/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./icons/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./icons/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./icons/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./icons/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="./icons/favicon-196x196.png&quot; sizes=&quot;196x196" />
+        <link rel="icon" type="image/png" href="./icons/favicon-96x96.png&quot; sizes=&quot;96x96" />
+        <link rel="icon" type="image/png" href="./icons/favicon-32x32.png&quot; sizes=&quot;32x32" />
+        <link rel="icon" type="image/png" href="./icons/favicon-16x16.png&quot; sizes=&quot;16x16" />
+        <link rel="icon" type="image/png" href=./icons"/favicon-128.png&quot; sizes=&quot;128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="./icons/mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="./icons/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="./icons/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="./icons/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="./icons/mstile-310x310.png" />
+
+        <link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="/assets/css/panel.css" >
+  </head>
+  <body>
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+          <a class="navbar-brand" href="/">
+            <img src="/favicon-32x32.png">
+            <span class="d-none d-md-inline">Member Management Cypriot FOSS Community</span>
+            <span class="d-md-none">Ellakcy</span>
+          </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="nav d-md-none navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link text-light" href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;item</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-nav-xs-inline ml-auto">
+              <li class="nav-item d-md-none bg-dark">
+                  <a class="nav-link active" aria-label="Edit your profile" href="/profile/edit"><i class="fa fa-user" aria-hidden="true"></i></a>
+              </li>
+              <li class="nav-item d-none d-md-inline-flex">
+                <a class="nav-link active" href="#"><i class="fa fa-envelope"></i></a>
+              </li>
+              <li class="nav-item d-none d-md-inline-flex">
+                <a class="nav-link active" href="#"><i class="fa fa-bullhorn"></i></a>
+              </li>
+              <li class="nav-item bg-danger">
+                  <a class="nav-link active" aria-label="Logout from application" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+              </li>
+            </ul><!-- navbar-nav-xs-inline -->
+
+        </div><!-- /navbar colapse-->
+      </nav><!-- /navbar -->
+    </header>
+            <div class="sidebar bg-dark text-light">
+
+<div class="row text-center" itemscope itemtype="http://schema.org/Person">
+  <div class="col-12">
+    <img class="rounded-circle mt-2 bg-light" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDQzOC41MjkgNDM4LjUyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDM4LjUyOSA0MzguNTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTIxOS4yNjUsMjE5LjI2N2MzMC4yNzEsMCw1Ni4xMDgtMTAuNzEsNzcuNTE4LTMyLjEyMWMyMS40MTItMjEuNDExLDMyLjEyLTQ3LjI0OCwzMi4xMi03Ny41MTUgICAgYzAtMzAuMjYyLTEwLjcwOC01Ni4xLTMyLjEyLTc3LjUxNkMyNzUuMzY2LDEwLjcwNSwyNDkuNTI4LDAsMjE5LjI2NSwwUzE2My4xNiwxMC43MDUsMTQxLjc1LDMyLjExNSAgICBjLTIxLjQxNCwyMS40MTYtMzIuMTIxLDQ3LjI1My0zMi4xMjEsNzcuNTE2YzAsMzAuMjY3LDEwLjcwNyw1Ni4xMDQsMzIuMTIxLDc3LjUxNSAgICBDMTYzLjE2NiwyMDguNTU3LDE4OS4wMDEsMjE5LjI2NywyMTkuMjY1LDIxOS4yNjd6IiBmaWxsPSIjMDAwMDAwIi8+CgkJPHBhdGggZD0iTTQxOS4yNTgsMzM1LjAzNmMtMC42NjgtOS42MDktMi4wMDItMTkuOTg1LTMuOTk3LTMxLjEyMWMtMS45OTktMTEuMTM2LTQuNTI0LTIxLjQ1Ny03LjU3LTMwLjk3OCAgICBjLTMuMDQ2LTkuNTE0LTcuMTM5LTE4Ljc5NC0xMi4yNzgtMjcuODM2Yy01LjEzNy05LjA0MS0xMS4wMzctMTYuNzQ4LTE3LjcwMy0yMy4xMjdjLTYuNjY2LTYuMzc3LTE0LjgwMS0xMS40NjUtMjQuNDA2LTE1LjI3MSAgICBjLTkuNjE3LTMuODA1LTIwLjIyOS01LjcxMS0zMS44NC01LjcxMWMtMS43MTEsMC01LjcwOSwyLjA0Ni0xMS45OTEsNi4xMzljLTYuMjc2LDQuMDkzLTEzLjM2Nyw4LjY2Mi0yMS4yNjYsMTMuNzA4ICAgIGMtNy44OTgsNS4wMzctMTguMTgyLDkuNjA5LTMwLjgzNCwxMy42OTVjLTEyLjY1OCw0LjA5My0yNS4zNjEsNi4xNC0zOC4xMTgsNi4xNGMtMTIuNzUyLDAtMjUuNDU2LTIuMDQ3LTM4LjExMi02LjE0ICAgIGMtMTIuNjU1LTQuMDg2LTIyLjkzNi04LjY1OC0zMC44MzUtMTMuNjk1Yy03Ljg5OC01LjA0Ni0xNC45ODctOS42MTQtMjEuMjY3LTEzLjcwOGMtNi4yODMtNC4wOTMtMTAuMjc4LTYuMTM5LTExLjk5MS02LjEzOSAgICBjLTExLjYxLDAtMjIuMjIyLDEuOTA2LTMxLjgzMyw1LjcxMWMtOS42MTMsMy44MDYtMTcuNzQ5LDguODk4LTI0LjQxMiwxNS4yNzFjLTYuNjYxLDYuMzc5LTEyLjU2MiwxNC4wODYtMTcuNjk5LDIzLjEyNyAgICBjLTUuMTM3LDkuMDQyLTkuMjI5LDE4LjMyNi0xMi4yNzUsMjcuODM2Yy0zLjA0NSw5LjUyMS01LjU2OCwxOS44NDItNy41NjYsMzAuOTc4Yy0yLDExLjEzNi0zLjMzMiwyMS41MDUtMy45OTksMzEuMTIxICAgIGMtMC42NjYsOS42MTYtMC45OTgsMTkuNDY2LTAuOTk4LDI5LjU1NGMwLDIyLjgzNiw2Ljk0OSw0MC44NzUsMjAuODQyLDU0LjEwNGMxMy44OTYsMTMuMjI0LDMyLjM2LDE5LjgzNSw1NS4zOSwxOS44MzVoMjQ5LjUzMyAgICBjMjMuMDI4LDAsNDEuNDktNi42MTEsNTUuMzg4LTE5LjgzNWMxMy45MDEtMTMuMjI5LDIwLjg0NS0zMS4yNjUsMjAuODQ1LTU0LjEwNEM0MjAuMjY0LDM1NC41MDIsNDE5LjkzMiwzNDQuNjUyLDQxOS4yNTgsMzM1LjAzNiAgICB6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /><br>
+  </div>
+  <div class="col-12">
+    <h4 class="sidebar_header" > <span itemprop="name">John</span>&nbsp;<span itemprop="surname">Doe</span></h4>
+  </div>
+  <div class="col-12 sidebar_font">
+    jdoe@ellak.org.cy
+  </div>
+  <div class="col-12">
+    <a href="/profile/edit">Edit Profile</a>&nbsp;-&nbsp;<a href="/logout" class="text-danger">Logout</a>
+  </div>
+</div>
+
+      <hr class="border-light text-light">
+      <nav class="nav flex-column">
+          <a class="nav-link active text-light border-bottom-1 border-light" href="#collapseExample" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Item 1</a>
+          <div id="#collapseExample" class="colapse">
+            <nav class="nav flex-column">
+                <a class="nav-link text-light" href="#item-1-1"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Item 1-1</a>
+                <a class="nav-link text-light" href="#item-1-2">Item 1-2</a>
+            </nav>
+          </div>
+          <a class="nav-link active text-light border-bottom-0 border-light" href="#">Item 2</a>
+      </nav>
+              </div>
+
+
+
+  <div class="content">
+      Main content
+  </div>
+ <script src="./assets/vendor/jquery.min.js"></script>
+ <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
