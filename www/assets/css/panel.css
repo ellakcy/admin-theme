@@ -3,15 +3,15 @@
   display: flex;
   align-items: stretch;
   flex-flow: row;
+  flex-direction: row;
   width:100% !important;
-  height:100% !important;
 }
 
 #sidebar {
   width: 19%;
   float: left;
-  height: 100%;
-  bottom: 0px;
+  min-height: 100%;
+  margin-bottom: -99999px;
 }
 
 .sidebar_header {
@@ -37,19 +37,58 @@
   padding: 1px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px){
+
   #sidebar {
-    display: none;
     width:100%;
+    min-height:100%;
+    float: none;
   }
 
   .content {
     width:100%;
     float:none;
   }
+
+  #content-main {
+    align-content: center;
+    flex-direction: column;
+  }
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+
+  #content-main {
+    align-content: center;
+    flex-direction: column;
+  }
+
+  #sidebar {
+    width:10%;
+    min-height:100%;
+  }
+
+  #sidebar .nav .nav-link {
+    text-align:center;
+    border: 1px white;
+  }
+
+  .content {
+    width:90%;
+    float:none;
+  }
+
+  #profile_img{
+    width:32px;
+    height:32px;
+  }
+
+  .tablet-hide {
+    display:none;
+  }
+}
+
+@media only screen and ( width > 800px and min-width: 1900px) {
   #sidebar{
     width: 15%;
   }
