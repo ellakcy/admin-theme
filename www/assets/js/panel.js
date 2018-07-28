@@ -2,7 +2,7 @@
 * Utility function that checks if the screen is on desktop
 */
 function isDesktop(){
-  return $(window).width() > 576
+  return $(window).width() > 700
 }
 
 $(function(){
@@ -14,14 +14,23 @@ $(function(){
     } else {
       $('#sidebar').slideToggle("slow");
     }
+    $('.sidebar-reveal').blur();
   });
 
   $(window).on('resize orientationChange', function(event) {
     if(isDesktop()){
         $('#sidebar').show();
-        $('.sidebar-reveal').blur();
         //Further add stull ot get shown on large screen
     }
+    $('.sidebar-reveal').blur();
+  });
+
+  $('.menu-open').click(function(e){
+    e.preventDefault();
+    var href=$(this).attr("href");
+    href=document.getElementById(href);
+    console.log(href);
+    $(href).slideToggle("slow");
   });
 
 });
