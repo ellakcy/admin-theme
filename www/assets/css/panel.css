@@ -1,17 +1,21 @@
+html, body {
+   height: 100%;
+}
 
 #content-main{
   display: flex;
   align-items: stretch;
   flex-flow: row;
   flex-direction: row;
+  overflow: hidden;
+  height: 100%;
   width:100% !important;
 }
 
 #sidebar {
   width: 19%;
-  float: left;
   min-height: 100%;
-  margin-bottom: -99999px;
+  flex: 1;
 }
 
 .sidebar_header {
@@ -88,9 +92,9 @@
   }
 }
 
-@media only screen and ( width > 800px and min-width: 1900px) {
+@media only screen and (min-width: 1900px) {
   #sidebar{
-    width: 15%;
+    width: 13%;
   }
 
   .sidebar_header {
@@ -102,7 +106,7 @@
   }
 
   .content {
-    width:85%;
+    width:87%;
   }
 }
 
