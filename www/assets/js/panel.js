@@ -12,7 +12,7 @@ $(function(){
     if($(window).width() > 700){
       $('#sidebar').toggle("slide");
     } else {
-      $('#sidebar').slideToggle("slow");
+      $('#sidebar').toggle("blind");
     }
     $('.sidebar-reveal').blur();
   });
@@ -21,6 +21,8 @@ $(function(){
     if(isDesktop()){
         $('#sidebar').show();
         //Further add stull ot get shown on large screen
+    } else {
+        $('#sidebar').hide();
     }
     $('.sidebar-reveal').blur();
   });
