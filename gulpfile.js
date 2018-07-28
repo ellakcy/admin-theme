@@ -32,7 +32,7 @@ gulp.task('move_bootstrap',function(done){
 
 //Jquery & miscellanous Javascript move
 gulp.task('move_jquery',function(done){
-  var jqueryFiles=['./node_modules/jquery/dist/jquery.min.js'];
+  var jqueryFiles=['./node_modules/jquery/dist/jquery.min.js','./node_modules/jquery-ui-dist/jquery-ui.min.css','./node_modules/jquery-ui-dist/jquery-ui.min.js'];
   gulp.src(jqueryFiles).pipe(gulp.dest(vendor_folder));
 
   done();
