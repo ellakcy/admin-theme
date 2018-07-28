@@ -1,6 +1,10 @@
 
 #content-main{
-  min-width:100% !important;
+  display: flex;
+  align-items: stretch;
+  flex-flow: row;
+  width:100% !important;
+  height:100% !important;
 }
 
 #sidebar {
@@ -23,6 +27,7 @@
   float: right;
   margin: 0px !important;
   padding:10px;
+  height:100%
 }
 
 #sidebar .nav .nav {
