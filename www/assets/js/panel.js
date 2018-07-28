@@ -9,7 +9,7 @@ $(function(){
 
   $('.sidebar-reveal').click(function(e) {
     e.preventDefault();
-    if($(window).width() > 576){
+    if($(window).width() > 700){
       $('#sidebar').toggle("slide");
     } else {
       $('#sidebar').slideToggle("slow");
