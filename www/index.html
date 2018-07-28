@@ -70,10 +70,15 @@
 
       <!-- navigation -->
       <nav class="nav flex-column">
-              <a class="nav-link text-light menu-open" href="#collapseExample"><span>Item 1</span></a>
-              <div id="#collapseExample" class="sidebar-menu hidden">
+              <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="collapseExample"><span>Item 1</span></a>
+              <div id="collapseExample" class="sidebar-menu">
                 <nav class="nav flex-column">
-                    <a class="nav-link text-light" href="#item-1-1"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<span>Item 1-1</span></a>
+                    <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="item11"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<span>Item 1-1</span></a>
+                    <div id="item11" class="sidebar-menu">
+                      <nav class="nav flex-column">
+                        <a class="nav-link"> Hello </a>
+                      </nav>
+                    </div>
                     <a class="nav-link text-light" href="#item-1-2"><span>Item 1-2</span></a>
                 </nav>
               </div>

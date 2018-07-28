@@ -27,7 +27,8 @@ $(function(){
 
   $('.menu-open').click(function(e){
     e.preventDefault();
-    var href=$(this).attr("href");
+    var href=$(this).attr("data-sidebar-toggle");
+    console.log(href);
     href=document.getElementById(href);
     console.log(href);
     $(href).slideToggle("slow");
