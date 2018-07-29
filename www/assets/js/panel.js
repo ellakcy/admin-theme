@@ -53,7 +53,12 @@ $(function(){
     if(isDesktop()){
         $('#sidebar').show();
         $('.dropdown-menu header-dropdown').addClass('dropdown-menu-right');
-        //Further add stull ot get shown on large screen
+
+        //Show Main sidebar content
+        $('#sideber-main-nav').show();
+        $('.sidedar-sm').attr('data-sidebar-sm-display',false);
+        $('#sideber-main-nav').attr('data-sidebar-sm-display',true);
+
     } else {
         $('#sidebar').hide();
         $('.dropdown-menu header-dropdown').removeClass('dropdown-menu-right');
