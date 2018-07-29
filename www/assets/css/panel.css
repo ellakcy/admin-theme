@@ -70,14 +70,24 @@ header {
 
   #sidebar {
     width:100%;
-    min-height:100%;
+    min-height:calc( 100% - 59.5px );
     float: none;
     display: none;
+  }
+
+  #sidebar-content {
+    min-height:40%;
+    overflow-y:scroll;
   }
 
   .content {
     width:100%;
     float:none;
+  }
+
+  #sidebarMenus {
+    height:40px;
+    margin-top: 19%;
   }
 
   #content-main {
