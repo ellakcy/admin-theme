@@ -41,16 +41,58 @@
             <span class="d-md-none">Theme</span>
           </a>
 
-          <div class="btn-group" role="group">
-            <a class="btn btn-outline-light sidebar-reveal" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-          </div>
+          <!-- for decktop -->
+          <ul class="navbar-nav d-none d-md-inline-flex mr-auto">
+            <li class="nav-item">
+              <div class="btn-group" role="group">
+                <a class="btn btn-outline-light sidebar-reveal" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+              </div>
+            </li>
+          </ul>
 
-          <div class="btn-group ml-auto" role="group" aria-label="Basic icons">
-              <a class="btn btn-light" href="#"><i class="fa fa-envelope aria-hidden="true""></i></a>
-              <a class="btn btn-light" href="#"><i class="fa fa-bullhorn"></i></a>
-              <a class="btn btn-danger" aria-label="Logout from application" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
-          </div>
-      </nav><!-- /navbar -->
+          <!-- for decktop -->
+          <ul class="navbar-nav d-none d-md-inline-flex ml-auto">
+            <li class="nav-item ">
+              <div class="btn-group" role="group" aria-label="Basic icons">
+                  <button id="emailNotification" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope aria-hidden="true""></i></button>
+                  <button class="btn btn-light" href="#"><i class="fa fa-bullhorn"></i></button>
+                  <a class="btn btn-danger" aria-label="Logout from application" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+
+                  <div class="dropdown-menu dropdown-menu-right header-dropdown" aria-labelledby="emailNotification">
+                        <h6 class="dropdown-header">Incomming emails: <span class="badge badge-info"> 12 </span></h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                          <span class="header-dropdown-icon">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                          </span>
+                          <span class="header-dropdown-content">
+                            <h6 class="emailTitle">Meeting at 10</h6>
+                            <span class="emailSubtitle"><strong>From:</strong> your boss</span>
+                          </span>
+                        </a>
+                        <a class="dropdown-item disabled" href="#">
+                          <span class="header-dropdown-icon">
+                            <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                          </span>
+                          <span class="header-dropdown-content">
+                            <h6 class="emailTitle">Is the stuff ready</h6>
+                            <span class="emailSubtitle"><strong>From:</strong> An asshole</span>
+                          </span>
+                        </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- for mobile -->
+              <ul class="navbar-nav d-md-none ml-auto">
+                <li class="nav-item">
+                  <div class="btn-group" role="group">
+                    <a class="btn btn-outline-light sidebar-reveal" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                  </div>
+                </li>
+              </ul>
+        </nav><!-- /navbar -->
     </header>
     <div id="content-main">
     <aside id="sidebar" class="bg-dark text-light">

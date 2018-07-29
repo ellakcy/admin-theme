@@ -26,9 +26,11 @@ $(function(){
   $(window).on('resize orientationChange', function(event) {
     if(isDesktop()){
         $('#sidebar').show();
+        $('.dropdown-menu header-dropdown').addClass('dropdown-menu-right');
         //Further add stull ot get shown on large screen
     } else {
         $('#sidebar').hide();
+        $('.dropdown-menu header-dropdown').removeClass('dropdown-menu-right');
     }
     $('.sidebar-reveal').blur();
     $('.content').removeClass('full_width');
