@@ -10,7 +10,13 @@ $(function(){
   $('.sidebar-reveal').click(function(e) {
     e.preventDefault();
     if($(window).width() > 700){
-      $('#sidebar').toggle("slide");
+      $('#sidebar').toggle("slide",function(){
+        if($('#sidebar').is(":visible")){
+          $('.content').removeClass('full_width');
+        } else {
+          $('.content').addClass('full_width');
+        }
+      });
     } else {
       $('#sidebar').toggle("blind");
     }
@@ -25,6 +31,7 @@ $(function(){
         $('#sidebar').hide();
     }
     $('.sidebar-reveal').blur();
+    $('.content').removeClass('full_width');
   });
 
   $('.menu-open').click(function(e){
