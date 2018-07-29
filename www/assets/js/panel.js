@@ -1,8 +1,15 @@
 /**
 * Utility function that checks if the screen is on desktop
 */
-function isDesktop(){
+var isDesktop = function(){
   return $(window).width() > 700
+}
+
+/**
+* In many cases we want to retrieve an element that
+*/
+var getElementFromIdProvidedInDataAttribute = function(parentElement, dataAttribute){
+
 }
 
 $(function(){
@@ -44,5 +51,13 @@ $(function(){
     console.log(href);
     $(href).slideToggle("slow");
   });
+
+  $("#sidebarMenus div button").click(function(e){
+    e.preventDefault();
+    console.log("Item Clicked");
+    var href=$(this).attr("data-sidebar-show");
+    href=document.getElementById(href);
+    console.log(href);
+  })
 
 });
