@@ -89,6 +89,7 @@ header {
   }
 
   .sidedar-sm[data-sidebar-sm-display="true"]{
+    min-height:100%;
     display:block;
   }
 
