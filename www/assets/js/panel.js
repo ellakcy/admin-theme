@@ -49,6 +49,7 @@ $(function(){
     $('.sidebar-reveal').blur();
   });
 
+  // Events on screen change
   $(window).on('resize orientationChange', function(event) {
     if(isDesktop()){
         $('#sidebar').show();
