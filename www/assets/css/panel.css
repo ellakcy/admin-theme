@@ -89,9 +89,12 @@ header {
   }
 
   .sidedar-sm[data-sidebar-sm-display="true"]{
+    position: relative;
     min-height:100%;
     display:block;
-    margin: 0px;
+	  margin: 5px;
+	  overflow-y: scroll;
+    height: 32em;
   }
 
   .sidedar-sm ul {
@@ -104,7 +107,7 @@ header {
 
   #sidebar {
     width:100%;
-    min-height:calc( 100% - 59.5px );
+    min-height:45%;
     float: none;
     display: none;
   }
@@ -160,7 +163,7 @@ header {
   }
 
   .sidedar-sm {
-    display: none;
+    display: none !important;
   }
 
   .main-nav {
