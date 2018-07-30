@@ -94,7 +94,7 @@ header {
     display:block;
 	  margin: 5px;
 	  overflow-y: scroll;
-    height: 32em;
+    max-height: 20em;
   }
 
   .sidedar-sm ul {
