@@ -112,6 +112,10 @@ header {
     display: none;
   }
 
+  #sidebarHeader{
+    border:none !important;
+  }
+
   #sidebar-content {
     min-height:40%;
     overflow-y:scroll;
@@ -130,6 +134,12 @@ header {
     align-content: center;
     flex-direction: column;
   }
+
+  .sidebar-btn:hover{
+    background-color:#fff !important;
+    color:#343a40 !important;
+  }
+
 }
 
 @media only screen and (min-width: 700px) and (max-width: 800px) {
