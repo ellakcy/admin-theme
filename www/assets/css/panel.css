@@ -59,6 +59,7 @@ header {
 
 .sidebar-menu-level-1 {
   background-color:rgba(255,255,255,0.4);
+  padding-left:0px;
 }
 
 .content.full_width {
