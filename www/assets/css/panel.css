@@ -317,6 +317,19 @@ header {
     width:100%;
     float:right;
   }
+
+  .sidedar-sm {
+    display:none;
+  }
+
+  .sidedar-sm[data-sidebar-sm-display="true"]{
+    position: relative;
+    min-height:100%;
+    display:block !important;
+    margin: 5px;
+    overflow-y: scroll;
+    max-height: 100%;
+  }
 }
 
 @media only screen and (min-width: 1900px) {
