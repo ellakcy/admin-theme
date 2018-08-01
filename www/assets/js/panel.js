@@ -2,7 +2,7 @@
 * Utility function that checks if the screen is on desktop
 */
 var isDesktop = function(){
-  return $(window).width() > 700
+  return $(window).width() > 691
 }
 
 /**
@@ -32,23 +32,6 @@ var boolVal=function(value){
 }
 
 $(function(){
-
-  $('.sidebar-reveal').click(function(e) {
-    e.preventDefault();
-    if($(window).width() > 700){
-      $('#sidebar').toggle("slide",function(){
-        if($('#sidebar').is(":visible")){
-          $('.content').removeClass('full_width');
-        } else {
-          $('.content').addClass('full_width');
-        }
-      });
-    } else {
-      $('#sidebar').toggle("blind");
-    }
-    $('.sidebar-reveal').blur();
-  });
-
   // Events on screen change
   $(window).on('resize orientationChange', function(event) {
     if(isDesktop()){
@@ -68,14 +51,31 @@ $(function(){
     $('.content').removeClass('full_width');
   });
 
+  //SIDEBAR
+  $('.sidebar-reveal').click(function(e) {
+      e.preventDefault();
+    if(isDesktop()){
+      $('#sidebar').toggle("slide",function(){
+        if($('#sidebar').is(":visible")){
+          $('.content').removeClass('full_width');
+        } else {
+          $('.content').addClass('full_width');
+        }
+      });
+    } else {
+        $('#sidebar').toggle("blind");
+    }
+    $('.sidebar-reveal').blur();
+  });
+
+  //Opening submenu
   $('.menu-open').click(function(e){
     e.preventDefault();
     var href=$(this).attr("data-sidebar-toggle");
-    console.log(href);
     href=document.getElementById(href);
-    console.log(href);
     $(href).slideToggle("slow");
   });
+
 
   $("#sidebarMenus div button").click(function(e){
     e.preventDefault();
