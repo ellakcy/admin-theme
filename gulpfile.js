@@ -54,7 +54,7 @@ gulp.task('move_fontawesome',function(done){
 gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome'],(done)=>{done()}));
 gulp.task('dev',gulp.series(['move_frontend'],(done)=>{
     gulp.src(['./www']).pipe(gulpServerIo({
-      port: 8800,
+      port: 8880,
       indexes: ['index.html'],
       open: true
     }));
