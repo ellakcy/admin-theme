@@ -57,6 +57,10 @@ header {
   padding: 6px;
 }
 
+.sidebar-menu[data-menu-open="false"]{
+  display:none
+}
+
 .sidebar-menu-level-1 {
   background-color:rgba(255,255,255,0.4);
   padding-left:0px;

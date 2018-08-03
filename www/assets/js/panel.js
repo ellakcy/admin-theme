@@ -81,7 +81,10 @@ $(function(){
     e.preventDefault();
     var href=$(this).attr("data-sidebar-toggle");
     href=document.getElementById(href);
-    $(href).slideToggle("slow");
+    $(href).slideToggle("slow",function(elem){
+      console.log("Animation finished");
+      $(href).attr("data-menu-open",$(href).is(":visible"));
+    });
   });
 
 
