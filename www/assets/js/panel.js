@@ -6,6 +6,13 @@ var isDesktop = function(){
 }
 
 /**
+* Width where the sidebar will ger displayed
+*/
+var sidebarDisplay=function(){
+  return $(window).width() > 900
+}
+
+/**
 * In many cases we want to retrieve an element that has an id defined in an attribute.
 * @param {Element} element The element to retrieve the id.
 * @param {String} attribute the attribute containing the id.
@@ -34,7 +41,8 @@ var boolVal=function(value){
 $(function(){
   // Events on screen change
   $(window).on('resize orientationChange', function(event) {
-    if(isDesktop()){
+
+    if(sidebarDisplay()){
         $('#sidebar').show();
         $('.dropdown-menu header-dropdown').addClass('dropdown-menu-right');
 
