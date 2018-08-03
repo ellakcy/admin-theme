@@ -120,6 +120,18 @@ header {
   display:none;
 }
 
+.menu-open .open-indicator {
+  text-align: center;
+}
+
+.menu-open[data-menu-open=true] .open-indicator .closed {
+  display:none;
+}
+
+.menu-open[data-menu-open=false] .open-indicator .oppened {
+  display:none;
+}
+
 @media only screen and (max-width: 690px){
 
   #sidebar {

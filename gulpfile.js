@@ -45,6 +45,8 @@ gulp.task('move_fontawesome',function(done){
 
   gulp.src(path+'/webfonts/*').pipe(gulp.dest(dest+'/webfonts'));
   gulp.src(path+'/css/fontawesome-all.min.css').pipe(gulp.dest(dest+'/css'));
+  gulp.src(path+'/css/fontawesome.min.css').pipe(gulp.dest(dest+'/css'));
+
   done();
 });
 

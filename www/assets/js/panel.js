@@ -38,7 +38,22 @@ var boolVal=function(value){
   return $.inArray(value, falseValues) == -1
 }
 
+/**
+* Bootstraping empty sidebar indicators
+*/
+var sidebarBootstrap=function(){
+  $(".menu-open .open-indicator:empty").html("<span class=\"oppened\">+</span><span class=\"closed\">-</span>");
+  $(".menu-open").each(function(){
+    var elem=$(this);
+    var hrefOfTheMenuToOpen=getElementFromIdProvidedInDataAttribute(elem,"data-sidebar-toggle");
+    elem.attr("data-menu-open",$(hrefOfTheMenuToOpen).is(":visible"));
+  })
+}
+
 $(function(){
+
+  sidebarBootstrap();
+
   // Events on screen change
   $(window).on('resize orientationChange', function(event) {
 
@@ -79,11 +94,12 @@ $(function(){
   //Opening submenu
   $('.menu-open').click(function(e){
     e.preventDefault();
-    var href=$(this).attr("data-sidebar-toggle");
+    var self=$(this);
+    var href=self.attr("data-sidebar-toggle");
     href=document.getElementById(href);
-    $(href).slideToggle("slow",function(elem){
-      console.log("Animation finished");
+    $(href).slideToggle("slow",function(){
       $(href).attr("data-menu-open",$(href).is(":visible"));
+      $(self).attr("data-menu-open",$(href).is(":visible"));
     });
   });
 
