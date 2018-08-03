@@ -350,11 +350,11 @@ header {
   }
 
   .navbar-menu-tablet-mobile {
-    display: inline-flex;
+    display: none;
   }
 
   .navbar-menu-desktop{
-    display:none;
+    display:inline-flex;
   }
 }
 
