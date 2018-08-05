@@ -4,19 +4,19 @@ const uglify = require('gulp-uglify');
 const minifyJS = require('gulp-minify');
 const minifyCss = require('gulp-minify-css');
 const rename = require('gulp-rename');
+const fs   = require('fs');
+
+
+const frontend_folder="./www/assets";
+const vendor_folder=`${frontend_folder}/vendor`;
+const release_folder='./vendor';
+const serve_production_location='./www-prod';
 
 /**
-* Location where to store the 3rd party libraries
+* Where theme's javascript and css is located
 */
-var frontend_folder="./www/assets"
-var vendor_folder=`${frontend_folder}/vendor`
-var release_folder='./vendor'
-
-/**
-* Where NON 3rd party libs to get stored`
-*/
-var frontent_dev_folder_js=`${frontend_folder}/js`
-var frontent_dev_folder_css=`${frontend_folder}/css`
+const frontent_dev_folder_js=`${frontend_folder}/js`
+const frontent_dev_folder_css=`${frontend_folder}/css`
 
 /*################################### Installing Dependencies ###############################*/
 
@@ -81,7 +81,26 @@ gulp.task('dev',gulp.series(['move_frontend'],(done)=>{
     done();
 }));
 
-gulp.task('prod',gulp.series(['minify'],(done)=>{
+gulp.task('prod',gulp.series(['move_bootstrap','move_jquery','move_fontawesome','minify'],(done)=>{
+
+  //Create a production-only www
+  if(!fs.existsSync(serve_production_location)){
+    fs.mkdirSync(serve_production_location),
+    console.log('📁  folder created:', serve_production_location);
+  }
+
+  gulp.src('./www/*.html').pipe(gulp.dest(serve_production_location));
+  gulp.src('./www/icons/**').pipe(gulp.dest(`${serve_production_location}/icons`));
+  gulp.src(`${vendor_folder}/**`).pipe(gulp.dest(`${serve_production_location}/assets/vendor/`));
+  gulp.src(`${release_folder}/panel-min.js`).pipe(rename('panel.js')).pipe(gulp.dest(`${serve_production_location}/assets/js/`));
+  gulp.src(`${release_folder}/panel.min.css`).pipe(rename('panel.css')).pipe(gulp.dest(`${serve_production_location}/assets/css/`));
+
+  //Serve files
+  gulp.src(serve_production_location).pipe(gulpServerIo({
+    port: 8881,
+    indexes: ['index.html'],
+    open: true
+  }));
 
   done();
 }))
