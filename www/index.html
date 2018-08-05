@@ -124,8 +124,15 @@
 
       <!-- navigation -->
       <nav id="sideber-main-nav" class="nav flex-column main-nav sidedar-sm" data-sidebar-sm-display="true" >
-            <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#collapseExample"><span>Multilevel Example</span></a>
-            <div id="#collapseExample" class="sidebar-menu sidebar-menu-level-1">
+            <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#static"><span>Static Pages</span><span class="float-right open-indicator"></span></a>
+            <div id="#static" data-menu-open="true" class="sidebar-menu sidebar-menu-level-1">
+              <nav class="nav flex-column">
+                <a class="nav-link text-light" href="./login.html"><span class="float-left text-primary mr-1"><i class="far fa-circle"></i></span><span>Login Page</span></a>
+              </nav>
+            </div>
+
+            <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#collapseExample"><span>Multilevel Example</span><span class="float-right open-indicator"></span></a>
+            <div id="#collapseExample" data-menu-open="false" class="sidebar-menu sidebar-menu-level-1">
                 <nav class="nav flex-column">
                   <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="item11"><span>Item 1</span><span class="float-right open-indicator"></span></a>
                   <div id="item11" class="sidebar-menu" data-menu-open="true">
@@ -157,7 +164,8 @@
                       <a class="nav-link text-light" href="#"><span>Nested Item 3</span></a>
                     </nav>
                   </div>
-                  <a class="nav-link text-light" href="#item-1-2"><span>Item 2</span></a>
+
+                  <a class="nav-link text-light" href="#item2"><span>Item 2</span></a>
                 </nav>
             </div>
             <a class="nav-link active text-light border-bottom-0 border-light" href="#"><span>Item 2</span></a>

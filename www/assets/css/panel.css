@@ -26,6 +26,7 @@ header {
 
 #sideber-main-nav {
   margin:0px !important;
+  font-size:0.95rem;
 }
 
 .sidebar_header {
@@ -55,15 +56,7 @@ header {
 .sidebar-menu {
   border-top: 1px;
   padding: 6px;
-}
-
-.sidebar-menu[data-menu-open="false"]{
-  display:none
-}
-
-.sidebar-menu-level-1 {
-  background-color:rgba(255,255,255,0.4);
-  padding-left:0px;
+  font-size: 0.8rem;
 }
 
 .content.full_width {
@@ -120,6 +113,15 @@ header {
   display:none;
 }
 
+.sidebar-menu[data-menu-open="false"]{
+  display:none
+}
+
+.sidebar-menu-level-1 {
+  background-color:rgba(255,255,255,0.4);
+  padding-left:0px;
+}
+
 .menu-open .open-indicator {
   text-align: center;
 }
@@ -131,6 +133,7 @@ header {
 .menu-open[data-menu-open=false] .open-indicator .oppened {
   display:none;
 }
+
 
 @media only screen and (max-width: 690px){
 
