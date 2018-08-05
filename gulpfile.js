@@ -1,17 +1,22 @@
 var gulp = require('gulp');
 const gulpServerIo = require('gulp-server-io');
+const uglify = require('gulp-uglify');
+const minifyJS = require('gulp-minify');
+const minifyCss = require('gulp-minify-css');
+const rename = require('gulp-rename');
 
 /**
 * Location where to store the 3rd party libraries
 */
 var frontend_folder="./www/assets"
 var vendor_folder=`${frontend_folder}/vendor`
+var release_folder='./vendor'
 
 /**
 * Where NON 3rd party libs to get stored`
 */
 var frontent_dev_folder_js=`${frontend_folder}/js`
-var frontent_dev_folder_js=`${frontend_folder}/css`
+var frontent_dev_folder_css=`${frontend_folder}/css`
 
 /*################################### Installing Dependencies ###############################*/
 
@@ -50,9 +55,23 @@ gulp.task('move_fontawesome',function(done){
 });
 
 
+gulp.task('minify',function(done){
+  var paths=[
+    `${frontent_dev_folder_js}/panel.js`,
+    `${frontent_dev_folder_css}/panel.css`,
+  ];
+
+  gulp.src(`${frontent_dev_folder_js}/panel.js`).pipe(minifyJS()).pipe(uglify({mangle: false})).pipe(gulp.dest(release_folder));
+  gulp.src(`${frontent_dev_folder_css}/panel.css`).pipe(minifyCss()).pipe(rename({ suffix: '.min' })).pipe(gulp.dest(release_folder));
+
+  done();
+});
+
+
 /* ############################################ Main tasks ##################################### */
 
 gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome'],(done)=>{done()}));
+
 gulp.task('dev',gulp.series(['move_frontend'],(done)=>{
     gulp.src(['./www']).pipe(gulpServerIo({
       port: 8880,
@@ -61,5 +80,10 @@ gulp.task('dev',gulp.series(['move_frontend'],(done)=>{
     }));
     done();
 }));
+
+gulp.task('prod',gulp.series(['minify'],(done)=>{
+
+  done();
+}))
 
 gulp.task('default',gulp.series(['dev'],(done)=>{done()}));
