@@ -36,13 +36,9 @@ $(function(){
   $('.sidebar-reveal').click(function(e) {
     e.preventDefault();
     if($(window).width() > 700){
-      $('#sidebar').toggle("slide",function(){
-        $('#sidebar').toggleClass('d-none d-md-flex flex-column');
-      });
+      $('#sidebar').toggle("slide");
     } else {
-      $('#sidebar').toggle("blind",function(){
-        $('#sidebar').toggleClass('d-none d-md-flex flex-column');
-      });
+      $('#sidebar').toggle("blind");
     }
     $('.sidebar-reveal').blur();
   });

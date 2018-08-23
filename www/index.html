@@ -95,9 +95,9 @@
         </nav><!-- /navbar -->
     </header>
 
-    <div id="content-main" class="d-none d-md-flex flex-column flex-md-row align-self-md-stretch">
+    <div id="content-main" class="d-flex flex-column flex-sm-row align-self-md-stretch">
 
-    <aside id="sidebar" class="bg-dark order-0 col-12 col-md-3 col-lg-2 float-left text-light">
+    <aside id="sidebar" class="bg-dark order-md-0 order-1 col-12 col-md-3 col-lg-2 float-left text-light">
 
       <!-- profile item -->
       <div id="sidebarHeader" class="row text-center border border-bottom-1 border-top-0 border-left-0 border-right-0 border-light mb-1" itemscope itemtype="http://schema.org/Person">
@@ -111,10 +111,16 @@
         </div>
       </div><!-- /profile-item -->
 
+      <div id="sidebarMenus" class="d-md-none d-lg-none d-xl-none w-100">
+        <div class="row border border-top-0 border-bottom-1 border-left-0 border-right-0 border-light">
+          <button class="btn btn-link text-light col" data-sidebar-show="sideber-main-nav"><i class="fa fa-home"></i></button>
+          <button class="btn btn-link text-light col" data-sidebar-show="mailList"><i class="fa fa-envelope"></i></button>
+          <button class="btn btn-link text-light col"><i class="fa fa-bullhorn"></i></button>
+        </div>
+      </div>
       <div id="sidebar-content">
-
         <!-- navigation -->
-        <nav id="sideber-main-nav" class="nav flex-column main-nav sidedar-sm" data-sidebar-sm-display="true" >
+        <nav id="sideber-main-nav" class="nav flex-column main-nav w-100 sidedar-sm" data-sidebar-sm-display="true" >
             <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#collapseExample"><span>Item 1</span></a>
             <div id="#collapseExample" class="sidebar-menu">
                 <nav class="nav flex-column">
@@ -129,8 +135,7 @@
             <a class="nav-link active text-light border-bottom-0 border-light" href="#"><span>Item 2</span></a>
         </nav>
 
-        <div id="mailList" class="flex-column sidedar-sm bg-light text-dark d-md-none">
-        </nav>
+        <div id="mailList" class="flex-column w-100 sidedar-sm bg-light text-dark d-md-none" style="display:none">
           <ul>
             <li>item</li>
             <li>item</li>
@@ -138,14 +143,6 @@
           </ul>
         </div>
 
-      </div>
-
-      <div id="sidebarMenus" class="d-md-none d-lg-none d-xl-none d-table-row container-fluid">
-        <div class="row border border-top-1 border-bottom-0 border-left-0 border-right-0 border-light">
-          <button class="btn btn-link text-light col" data-sidebar-show="sideber-main-nav"><i class="fa fa-home"></i></button>
-          <button class="btn btn-link text-light col" data-sidebar-show="mailList"><i class="fa fa-envelope"></i></button>
-          <button class="btn btn-link text-light col"><i class="fa fa-bullhorn"></i></button>
-        </div>
       </div>
 
     </aside><!-- sidebar -->
