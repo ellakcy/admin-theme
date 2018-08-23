@@ -1,3 +1,18 @@
 #content-main {
   min-height:100%;
 }
+
+
+#sidebar-content {
+  min-width:100%;
+  margin:0px;
+  padding:0px;
+}
+
+.sidedar-sm {
+  width:100%;
+}
+
+.sidedar-sm ul{
+  list-style: none;
+}
