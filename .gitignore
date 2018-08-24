@@ -2,3 +2,4 @@ www/assets/vendor/*
 node_modules
 www-prod
 *_from_*_branch.*
+www/assets/css/panel.css

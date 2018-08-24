@@ -58,11 +58,6 @@ gulp.task('move_fontawesome',function(done){
 
 
 gulp.task('minify',function(done){
-  var paths=[
-    `${frontent_dev_folder_js}/panel.js`,
-    `${frontent_dev_folder_css}/panel.css`,
-  ];
-
   gulp.src(`${frontent_dev_folder_js}/panel.js`).pipe(minifyJS()).pipe(uglify({mangle: false})).pipe(gulp.dest(release_folder));
   // gulp.src(`${frontent_dev_folder_css}/panel.css`).pipe(minifyCss()).pipe(rename({ suffix: '.min' })).pipe(gulp.dest(release_folder));
 
@@ -70,20 +65,21 @@ gulp.task('minify',function(done){
 });
 
 gulp.task('sass', function (done) {
-  gulp.src(`${frontend_dev_folder_saas}/**/*.scss`)
+  gulp.src(`${frontend_dev_folder_saas}/*.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(frontent_dev_folder_css));
-    done();
+
+  done();
 });
 
 gulp.task('sass:watch', function (done) {
-  gulp.watch(`${frontend_dev_folder_saas}/**/*.scss`, gulp.series(['sass']));
+  gulp.watch(`${frontend_dev_folder_saas}/*.scss`, gulp.series(['sass']));
   done();
 });
 
 /* ############################################ Main tasks ##################################### */
 
-gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome'],(done)=>{done()}));
+gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome','sass'],(done)=>{done()}));
 
 gulp.task('dev',gulp.series(['move_frontend','sass:watch'],(done)=>{
     gulp.src(['./www']).pipe(gulpServerIo({

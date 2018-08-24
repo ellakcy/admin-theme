@@ -25,6 +25,7 @@
     "gulp-uglify": "^3.0.1",
     "jquery": "^3.3.1",
     "jquery-ui-dist": "^1.12.1",
-    "responsive-toolkit": "^2.6.3"
+    "responsive-toolkit": "^2.6.3",
+    "saas": "^1.0.0"
   }
 }

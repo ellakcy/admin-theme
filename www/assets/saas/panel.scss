@@ -4,18 +4,15 @@ html,body{
 }
 
 #content-main {
-  min-height: auto;
-  min-width:100%;
+  min-height: 100%;
 }
 
 #sidebar-content {
+  min-height:100%;
   min-width:100%;
   margin:0px;
   padding:0px;
-}
-
-.sidedar-sm {
-  width:100%;
+  overflow-y:scroll;
 }
 
 .sidedar-sm ul{
@@ -42,16 +39,13 @@ html,body{
   min-height:100%;
   display:block !important;
   margin: 5px;
-  overflow-y: scroll;
   max-height: 20em;
+  width:100%;
+  min-height:100%;
 }
 
 /* Sidebar Css */
 
-#sidebar-content {
-  min-height:40%;
-  overflow-y:scroll;
-}
 
 .sidebar-menu nav .nav-link span{
   float:left;
@@ -71,6 +65,7 @@ html,body{
 .sidedar-sm {
   display: none !important;
 }
+
 .sidedar-sm ul {
   list-style: none;
 }
