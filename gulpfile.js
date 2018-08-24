@@ -5,6 +5,7 @@ const minifyJS = require('gulp-minify');
 const minifyCss = require('gulp-minify-css');
 const rename = require('gulp-rename');
 const fs   = require('fs');
+const sass = require('gulp-sass');
 
 
 const frontend_folder="./www/assets";
@@ -17,6 +18,7 @@ const serve_production_location='./www-prod';
 */
 const frontent_dev_folder_js=`${frontend_folder}/js`
 const frontent_dev_folder_css=`${frontend_folder}/css`
+const frontend_dev_folder_saas=`${frontend_folder}/saas`
 
 /*################################### Installing Dependencies ###############################*/
 
@@ -62,17 +64,28 @@ gulp.task('minify',function(done){
   ];
 
   gulp.src(`${frontent_dev_folder_js}/panel.js`).pipe(minifyJS()).pipe(uglify({mangle: false})).pipe(gulp.dest(release_folder));
-  gulp.src(`${frontent_dev_folder_css}/panel.css`).pipe(minifyCss()).pipe(rename({ suffix: '.min' })).pipe(gulp.dest(release_folder));
+  // gulp.src(`${frontent_dev_folder_css}/panel.css`).pipe(minifyCss()).pipe(rename({ suffix: '.min' })).pipe(gulp.dest(release_folder));
 
   done();
 });
 
+gulp.task('sass', function (done) {
+  gulp.src(`${frontend_dev_folder_saas}/**/*.scss`)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(frontent_dev_folder_css));
+    done();
+});
+
+gulp.task('sass:watch', function (done) {
+  gulp.watch(`${frontend_dev_folder_saas}/**/*.scss`, gulp.series(['sass']));
+  done();
+});
 
 /* ############################################ Main tasks ##################################### */
 
 gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome'],(done)=>{done()}));
 
-gulp.task('dev',gulp.series(['move_frontend'],(done)=>{
+gulp.task('dev',gulp.series(['move_frontend','sass:watch'],(done)=>{
     gulp.src(['./www']).pipe(gulpServerIo({
       port: 8880,
       indexes: ['index.html'],
