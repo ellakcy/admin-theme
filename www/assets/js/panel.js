@@ -2,7 +2,14 @@
 * Utility function that checks if the screen is on desktop
 */
 var isDesktop = function(){
-  return $(window).width() > 700
+  return $(window).width() > 691
+}
+
+/**
+* Width where the sidebar will ger displayed
+*/
+var sidebarDisplay=function(){
+  return $(window).width() > 900
 }
 
 /**
@@ -31,20 +38,26 @@ var boolVal=function(value){
   return $.inArray(value, falseValues) == -1
 }
 
+/**
+* Bootstraping empty sidebar indicators
+*/
+var sidebarBootstrap=function(){
+  $(".menu-open .open-indicator:empty").html("<span class=\"oppened\">+</span><span class=\"closed\">-</span>");
+  $(".menu-open").each(function(){
+    var elem=$(this);
+    var hrefOfTheMenuToOpen=getElementFromIdProvidedInDataAttribute(elem,"data-sidebar-toggle");
+    elem.attr("data-menu-open",$(hrefOfTheMenuToOpen).is(":visible"));
+  })
+}
+
 $(function(){
 
-  $('.sidebar-reveal').click(function(e) {
-    e.preventDefault();
-    if($(window).width() > 700){
-      $('#sidebar').toggle("slide");
-    } else {
-      $('#sidebar').toggle("blind");
-    }
-    $('.sidebar-reveal').blur();
-  });
+  sidebarBootstrap();
 
+  // Events on screen change
   $(window).on('resize orientationChange', function(event) {
-    if(isDesktop()){
+
+    if(sidebarDisplay()){
         $('#sidebar').show();
         $('.dropdown-menu header-dropdown').addClass('dropdown-menu-right');
 
@@ -54,20 +67,42 @@ $(function(){
         $('#sideber-main-nav').attr('data-sidebar-sm-display',true);
 
     } else {
-      $('#sidebar').toggle("blind");
+        $('#sidebar').hide();
+        $('.dropdown-menu header-dropdown').removeClass('dropdown-menu-right');
     }
     $('.sidebar-reveal').blur();
     $('.content').removeClass('full_width');
   });
 
+  //SIDEBAR
+  $('.sidebar-reveal').click(function(e) {
+      e.preventDefault();
+    if(isDesktop()){
+      $('#sidebar').toggle("slide",function(){
+        if($('#sidebar').is(":visible")){
+          $('.content').removeClass('full_width');
+        } else {
+          $('.content').addClass('full_width');
+        }
+      });
+    } else {
+        $('#sidebar').toggle("blind");
+    }
+    $('.sidebar-reveal').blur();
+  });
+
+  //Opening submenu
   $('.menu-open').click(function(e){
     e.preventDefault();
-    var href=$(this).attr("data-sidebar-toggle");
-    console.log(href);
+    var self=$(this);
+    var href=self.attr("data-sidebar-toggle");
     href=document.getElementById(href);
-    console.log(href);
-    $(href).slideToggle("slow");
+    $(href).slideToggle("slow",function(){
+      $(href).attr("data-menu-open",$(href).is(":visible"));
+      $(self).attr("data-menu-open",$(href).is(":visible"));
+    });
   });
+
 
   $("#sidebarMenus div button").click(function(e){
     e.preventDefault();

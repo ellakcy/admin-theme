@@ -94,3 +94,15 @@ html,body{
   border: 2px solid !important;
   border-color: #343a40 !important;
 }
+
+.menu-open .open-indicator {
+  text-align: center;
+}
+
+.menu-open[data-menu-open=true] .open-indicator .closed {
+  display:none;
+}
+
+.menu-open[data-menu-open=false] .open-indicator .oppened {
+  display:none;
+}
