@@ -31,7 +31,6 @@
         <!-- stylesheets -->
         <link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/fontawesome-all.min.css">
-        <link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/fontawesome.min.css">
         <link rel="stylesheet" type="text/css" href="./assets/vendor/jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/panel.css" >
   </head>
@@ -98,8 +97,8 @@
               </ul>
         </nav><!-- /navbar -->
     </header>
-    <div id="content-main">
-    <aside id="sidebar" class="bg-dark text-light">
+    <div id="content-main" class="d-flex flex-column flex-md-inline mt-auto">
+        <aside id="sidebar" class="bg-dark order-0 col-12 col-md-3 col-lg-2 text-light" style="height:100%">
 
       <!-- profile item -->
       <div id="sidebarHeader" class="row text-center border border-bottom-1 border-top-0 border-left-0 border-right-0 border-light mb-1" itemscope itemtype="http://schema.org/Person">
@@ -121,41 +120,134 @@
         </div>
       </div>
       <div id="sidebar-content" class="p-0">
-        <!-- navigation -->
-        <nav id="sideber-main-nav" class="nav flex-column main-nav w-100 sidedar-sm" data-sidebar-sm-display="true" >
-            <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#collapseExample"><span>Item 1</span></a>
-            <div id="#collapseExample" class="sidebar-menu">
+
+        <nav id="sideber-main-nav" class="nav flex-column main-nav sidedar-sm" data-sidebar-sm-display="true" >
+              <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#static"><span>Static Pages</span><span class="float-right open-indicator"></span></a>
+              <div id="#static" data-menu-open="true" class="sidebar-menu sidebar-menu-level-1">
                 <nav class="nav flex-column">
-                  <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="item11"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<span>Item 1-1</span></a>
-                  <div id="item11" class="sidebar-menu">
-                    <nav class="nav flex-column">
-                      <a class="nav-link"> Hello </a>
-                    </nav>
-                  </div>
-                  <a class="nav-link text-light" href="#item-1-2"><span>Item 1-2</span></a>
+                  <a class="nav-link text-light" href="./login.html"><span class="float-left text-primary mr-1"><i class="far fa-circle"></i></span><span>Login Page</span></a>
                 </nav>
-            </div>
-            <a class="nav-link active text-light border-bottom-0 border-light" href="#"><span>Item 2</span></a>
+              </div>
+
+              <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#collapseExample"><span>Multilevel Example</span><span class="float-right open-indicator"></span></a>
+              <div id="#collapseExample" data-menu-open="false" class="sidebar-menu sidebar-menu-level-1">
+                  <nav class="nav flex-column">
+                    <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="item11"><span>Item 1</span><span class="float-right open-indicator"></span></a>
+                    <div id="item11" class="sidebar-menu" data-menu-open="true">
+                      <nav class="nav flex-column">
+
+                        <a class="nav-link text-light menu-open" href="#"  data-sidebar-toggle="item111">
+                          <span>Nested Item 1</span>
+                          <span class="float-right open-indicator">
+                            <span class="oppened"><i class="fas fa-angle-up"></i></span>
+                            <span class="closed"><i class="fas fa-angle-down"></i></span>
+                          </span>
+                        </a>
+                        <div id="item111" class="sidebar-menu" data-menu-open="false">
+                          <nav class="nav flex-column">
+                            <a class="nav-link text-light" href="#"><span>Nested Item 1-1</span></a>
+                            <a class="nav-link text-light" href="#"><span>Nested Item 1-2</span></a>
+                            <a class="nav-link text-light" href="#"><span>Nested Item 1-3</span></a>
+                          </nav>
+                        </div>
+
+                        <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="item112"><span>Nested Item 2</span><span class="float-right open-indicator"></span></a>
+                        <div id="item112" class="sidebar-menu" data-menu-open="true">
+                          <nav class="nav flex-column">
+                            <a class="nav-link text-light" href="#"><span>Nested Item 2-1</span></a>
+                            <a class="nav-link text-light" href="#"><span>Nested Item 2-2</span></a>
+                            <a class="nav-link text-light" href="#"><span>Nested Item 2-3</span></a>
+                          </nav>
+                        </div>
+                        <a class="nav-link text-light" href="#"><span>Nested Item 3</span></a>
+                      </nav>
+                    </div>
+
+                    <a class="nav-link text-light" href="#item2"><span>Item 2</span></a>
+                  </nav>
+              </div>
+              <a class="nav-link active text-light border-bottom-0 border-light" href="#"><span>Item 2</span></a>
         </nav>
 
-        <div id="mailList" class="flex-column w-100 mb-0 ml-0 mr-0 mt-1 sidedar-sm bg-light text-dark d-md-none" style="display:none">
-          <ul>
-            <li>item</li>
-            <li>item</li>
-            <li>item</li>
-          </ul>
+        <div id="mailList" class="flex-column sidedar-sm bg-light text-dark" style="border-radius: 15px;">
+            <ul class="list-group sidebar-list">
+              <li class="list-group-item">
+                <a class="list-link" href="#">
+                  <span class="header-dropdown-icon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                  <span class="header-dropdown-content">
+                    <h6 class="emailTitle">Meeting at 10</h6>
+                    <span class="emailSubtitle"><strong>From:</strong> your boss</span>
+                  </span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="list-link" href="#">
+                  <span class="header-dropdown-icon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                  <span class="header-dropdown-content">
+                    <h6 class="emailTitle">Meeting at 10</h6>
+                    <span class="emailSubtitle"><strong>From:</strong> your boss</span>
+                  </span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="list-link text-muted" href="#">
+                  <span class="header-dropdown-icon">
+                    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                  </span>
+                  <span class="header-dropdown-content">
+                    <h6 class="emailTitle">Is the stuff ready</h6>
+                    <span class="emailSubtitle"><strong>From:</strong> An asshole</span>
+                  </span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="list-link" href="#">
+                  <span class="header-dropdown-icon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                  <span class="header-dropdown-content">
+                    <h6 class="emailTitle">Meeting at 10</h6>
+                    <span class="emailSubtitle"><strong>From:</strong> your boss</span>
+                  </span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="list-link text-muted" href="#">
+                  <span class="header-dropdown-icon">
+                    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                  </span>
+                  <span class="header-dropdown-content">
+                    <h6 class="emailTitle">Is the stuff ready</h6>
+                    <span class="emailSubtitle"><strong>From:</strong> An asshole</span>
+                  </span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a class="list-link text-muted" href="#">
+                  <span class="header-dropdown-icon">
+                    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                  </span>
+                  <span class="header-dropdown-content">
+                    <h6 class="emailTitle">Is the stuff ready</h6>
+                    <span class="emailSubtitle"><strong>From:</strong> An asshole</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
         </div>
-
       </div>
-
     </aside><!-- sidebar -->
 
-    <!-- main content -->
-    <main class="container-fluid order-1">
+       <!-- main content -->
+        <main class="container-fluid order-1 col-auto">
           Main content
-    </main>
-    <!-- /main-content -->
-</div>
+        </main>
+        <!-- /main-content -->
+    </div>
 <script src="./assets/vendor/jquery.min.js"></script>
 <script src="./assets/vendor/jquery-ui.min.js"></script>
 <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
