@@ -64,7 +64,17 @@ gulp.task('minify',function(done){
   done();
 });
 
-gulp.task('sass', function (done) {
+//Saas
+gulp.task('move_saas_deps',function(done){
+  var deps=[
+    'node_modules/bootstrap/scss/_variables.scss',
+    'node_modules/bootstrap/scss/mixins/_breakpoints.scss'
+  ];
+  gulp.src(deps).pipe(gulp.dest(`${frontend_dev_folder_saas}/includes`));
+  done();
+});
+
+gulp.task('sass',function (done) {
   gulp.src(`${frontend_dev_folder_saas}/*.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(frontent_dev_folder_css));
@@ -79,7 +89,7 @@ gulp.task('sass:watch', function (done) {
 
 /* ############################################ Main tasks ##################################### */
 
-gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome','sass'],(done)=>{done()}));
+gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome','move_saas_deps','sass'],(done)=>{done()}));
 
 gulp.task('dev',gulp.series(['move_frontend','sass:watch'],(done)=>{
     gulp.src(['./www']).pipe(gulpServerIo({

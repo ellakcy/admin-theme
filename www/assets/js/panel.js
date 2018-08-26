@@ -54,25 +54,25 @@ $(function(){
 
   sidebarBootstrap();
 
-  // Events on screen change
-  $(window).on('resize orientationChange', function(event) {
-
-    if(sidebarDisplay()){
-        $('#sidebar').show();
-        $('.dropdown-menu header-dropdown').addClass('dropdown-menu-right');
-
-        //Show Main sidebar content
-        $('#sideber-main-nav').show();
-        $('.sidedar-sm').attr('data-sidebar-sm-display',false);
-        $('#sideber-main-nav').attr('data-sidebar-sm-display',true);
-
-    } else {
-        $('#sidebar').hide();
-        $('.dropdown-menu header-dropdown').removeClass('dropdown-menu-right');
-    }
-    $('.sidebar-reveal').blur();
-    $('.content').removeClass('full_width');
-  });
+  // // Events on screen change
+  // $(window).on('resize orientationChange', function(event) {
+  //
+  //   if(sidebarDisplay()){
+  //       $('#sidebar').show();
+  //       $('.dropdown-menu header-dropdown').addClass('dropdown-menu-right');
+  //
+  //       //Show Main sidebar content
+  //       $('#sideber-main-nav').show();
+  //       $('.sidedar-sm').attr('data-sidebar-sm-display',false);
+  //       $('#sideber-main-nav').attr('data-sidebar-sm-display',true);
+  //
+  //   } else {
+  //       $('#sidebar').hide();
+  //       $('.dropdown-menu header-dropdown').removeClass('dropdown-menu-right');
+  //   }
+  //   $('.sidebar-reveal').blur();
+  //   $('.content').removeClass('full_width');
+  // });
 
   //SIDEBAR
   $('.sidebar-reveal').click(function(e) {
