@@ -19,6 +19,7 @@ html,body{
   @include media-breakpoint-up(sm) {
     width:100%;
     display:none;
+    height:100%;
   }
 
   @include media-breakpoint-up(md) {
@@ -82,10 +83,15 @@ html,body{
 
 .sidedar-sm[data-sidebar-sm-display="true"]{
   position: relative;
-
   display:block !important;
   margin: 5px;
   width:100%;
+
+  @include media-breakpoint-up(sm) {
+    width:100%;
+    display:none;
+    max-height:20em;
+  }
 }
 
 .sidebar-menu nav .nav-link span{
