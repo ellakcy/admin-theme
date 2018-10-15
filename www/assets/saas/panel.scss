@@ -28,10 +28,12 @@ html,body{
 
   @include media-breakpoint-up(lg) {
     width: 18%;
+    display:block;
   }
 
   @include media-breakpoint-up(xl) {
     width: 20%;
+    display:block;
   }
 }
 
@@ -48,7 +50,7 @@ html,body{
 }
 
 .header-dropdown {
-  width:100% !important;
+  width:15rem;
 }
 
 .header-dropdown-content {
@@ -71,6 +73,8 @@ html,body{
 
 .sidedar-sm {
   display: none !important;
+  min-height:100%;
+  max-height:100%;
 }
 
 .sidedar-sm ul{
@@ -79,12 +83,10 @@ html,body{
 
 .sidedar-sm[data-sidebar-sm-display="true"]{
   position: relative;
-  min-height:100%;
+
   display:block !important;
   margin: 5px;
-  max-height: 20em;
   width:100%;
-  min-height:100%;
 }
 
 .sidebar-menu nav .nav-link span{
