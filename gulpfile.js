@@ -47,11 +47,11 @@ gulp.task('move_jquery',function(done){
 
 //For fontawesome
 gulp.task('move_fontawesome',function(done){
-  var path='./node_modules/@fortawesome/fontawesome-free-webfonts';
+  var path='./node_modules/@fortawesome/fontawesome-free';
   var dest=vendor_folder+'/font-awesome';
 
   gulp.src(path+'/webfonts/*').pipe(gulp.dest(dest+'/webfonts'));
-  gulp.src(path+'/css/fontawesome.css').pipe(gulp.dest(dest+'/css'));
+  gulp.src(path+'/css/*.min.css').pipe(gulp.dest(dest+'/css'));
 
   done();
 });
