@@ -42,7 +42,7 @@ var boolVal=function(value){
 * Bootstraping empty sidebar indicators
 */
 var sidebarBootstrap=function(){
-  $(".menu-open .open-indicator:empty").html("<span class=\"oppened\">+</span><span class=\"closed\">-</span>");
+  $(".menu-open .open-indicator:empty").html("<span class=\"oppened\">-</span><span class=\"closed\">+</span>");
   $(".menu-open").each(function(){
     var elem=$(this);
     var hrefOfTheMenuToOpen=getElementFromIdProvidedInDataAttribute(elem,"data-sidebar-toggle");
