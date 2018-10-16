@@ -58,7 +58,7 @@ gulp.task('move_fontawesome',function(done){
 });
 
 gulp.task('move_responsive_utils',function(done){
-  var path="./node_modules/responsive-toolkit/dist/bootstrap-toolkit.min.js";
+  var path="node_modules/bs-breakpoints/dist/bs-breakpoints.min.js*";
   gulp.src(path).pipe(gulp.dest(vendor_folder));
   done();
 })

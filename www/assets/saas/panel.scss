@@ -15,7 +15,7 @@ html,body{
 
 #sidebar{
 
-  @include media-breakpoint-up('sm') {
+  @include media-breakpoint-up('xs') {
     width:100%;
     display:none;
   }

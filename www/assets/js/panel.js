@@ -2,7 +2,8 @@
 * Utility function that checks if the screen is on desktop
 */
 var isDesktop = function(){
-  return $(window).width()>576;
+  var reg=/x?(S|s)mall/;
+  return !reg.test(bsBreakpoints.detectBreakpoint());
 }
 
 /**
@@ -43,32 +44,13 @@ var sidebarBootstrap=function(){
   })
 }
 
-$(function(){
-
-  console.log($("#content").css('content'));
-
+$(document).ready(function(){
+  bsBreakpoints.init();
   sidebarBootstrap();
 
-
-  // // Events on screen change
-  // $(window).on('resize orientationChange', function(event) {
-  //
-  //   if(sidebarDisplay()){
-  //       $('#sidebar').show();
-  //       $('.dropdown-menu header-dropdown').addClass('dropdown-menu-right');
-  //
-  //       //Show Main sidebar content
-  //       $('#sideber-main-nav').show();
-  //       $('.sidedar-sm').attr('data-sidebar-sm-display',false);
-  //       $('#sideber-main-nav').attr('data-sidebar-sm-display',true);
-  //
-  //   } else {
-  //       $('#sidebar').hide();
-  //       $('.dropdown-menu header-dropdown').removeClass('dropdown-menu-right');
-  //   }
-  //   $('.sidebar-reveal').blur();
-  //   $('.content').removeClass('full_width');
-  // });
+  $(window).on('init.bs.breakpoint', function (e) {
+    console.log(e);
+  })
 
   //SIDEBAR
   $('.sidebar-reveal').click(function(e) {
