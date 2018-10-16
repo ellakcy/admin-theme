@@ -2,14 +2,7 @@
 * Utility function that checks if the screen is on desktop
 */
 var isDesktop = function(){
-  return $(window).width() > 691
-}
-
-/**
-* Width where the sidebar will ger displayed
-*/
-var sidebarDisplay=function(){
-  return $(window).width() > 900
+  return $(window).width()>576;
 }
 
 /**
@@ -52,8 +45,9 @@ var sidebarBootstrap=function(){
 
 $(function(){
 
-  sidebarBootstrap();
+  console.log($("#content").css('content'));
 
+  sidebarBootstrap();
 
 
   // // Events on screen change
@@ -117,5 +111,4 @@ $(function(){
     }
 
   })
-
 });
