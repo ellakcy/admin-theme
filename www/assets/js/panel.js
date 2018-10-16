@@ -54,6 +54,8 @@ $(function(){
 
   sidebarBootstrap();
 
+
+
   // // Events on screen change
   // $(window).on('resize orientationChange', function(event) {
   //
@@ -76,17 +78,11 @@ $(function(){
 
   //SIDEBAR
   $('.sidebar-reveal').click(function(e) {
-      e.preventDefault();
+    e.preventDefault();
     if(isDesktop()){
-      $('#sidebar').toggle("slide",function(){
-        if($('#sidebar').is(":visible")){
-          $('.content').removeClass('full_width');
-        } else {
-          $('.content').addClass('full_width');
-        }
-      });
+      $('#sidebar').toggle("slide");
     } else {
-        $('#sidebar').toggle("blind");
+      $('#sidebar').toggle("blind");
     }
     $('.sidebar-reveal').blur();
   });

@@ -20,6 +20,7 @@ const frontent_dev_folder_js=`${frontend_folder}/js`
 const frontent_dev_folder_css=`${frontend_folder}/css`
 const frontend_dev_folder_saas=`${frontend_folder}/saas`
 
+const frontend_prod_folder_sass=`${serve_production_location}/css`
 /*################################### Installing Dependencies ###############################*/
 
 //Move Bootstrap
@@ -56,11 +57,14 @@ gulp.task('move_fontawesome',function(done){
   done();
 });
 
+gulp.task('move_responsive_utils',function(done){
+  var path="./node_modules/responsive-toolkit/dist/bootstrap-toolkit.min.js";
+  gulp.src(path).pipe(gulp.dest(vendor_folder));
+  done();
+})
 
 gulp.task('minify',function(done){
   gulp.src(`${frontent_dev_folder_js}/panel.js`).pipe(minifyJS()).pipe(uglify({mangle: false})).pipe(gulp.dest(release_folder));
-  // gulp.src(`${frontent_dev_folder_css}/panel.css`).pipe(minifyCss()).pipe(rename({ suffix: '.min' })).pipe(gulp.dest(release_folder));
-
   done();
 });
 
@@ -82,6 +86,18 @@ gulp.task('sass',function (done) {
   done();
 });
 
+gulp.task('saas_minified',function(done){
+
+  if(!fs.existsSync(frontend_prod_folder_sass)){
+    fs.mkdirSync(frontend_prod_folder_sass),
+    console.log('📁  folder created:', frontend_prod_folder_sass);
+  }
+
+  gulp.src(`${frontend_dev_folder_saas}/*.scss`)
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest(frontend_prod_folder));
+})
+
 gulp.task('sass:watch', function (done) {
   gulp.watch(`${frontend_dev_folder_saas}/*.scss`, gulp.series(['sass']));
   done();
@@ -89,9 +105,11 @@ gulp.task('sass:watch', function (done) {
 
 /* ############################################ Main tasks ##################################### */
 
-gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome','move_saas_deps','sass'],(done)=>{done()}));
+gulp.task('move_frontend', gulp.series(['move_bootstrap','move_jquery','move_fontawesome','move_responsive_utils','move_saas_deps'],(done)=>{done()}));
 
-gulp.task('dev',gulp.series(['move_frontend','sass:watch'],(done)=>{
+gulp.task('make_frontend',gulp.series(['move_frontend','sass']),(done)=>{done()});
+
+gulp.task('dev',gulp.series(['make_frontend','sass:watch'],(done)=>{
     gulp.src(['./www']).pipe(gulpServerIo({
       port: 8880,
       indexes: ['index.html'],
