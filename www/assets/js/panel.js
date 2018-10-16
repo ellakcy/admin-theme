@@ -32,6 +32,15 @@ var boolVal=function(value){
   return $.inArray(value, falseValues) == -1
 }
 
+var toggleSidebar=function(){
+  if(isDesktop()){
+    $('#sidebar').toggle("slide");
+  } else {
+    $('#sidebar').toggle("blind");
+  }
+  $('.sidebar-reveal').blur();
+}
+
 /**
 * Bootstraping empty sidebar indicators
 */
@@ -52,15 +61,20 @@ $(document).ready(function(){
     console.log(e);
   })
 
+  // Events on screen change
+  $(window).on('resize orientationChange', function(event) {
+    if(isDesktop()){
+      $('#sidebar').show("slide");
+    }else{
+      $("#sidebar").hide("blind");
+    }
+    $('.sidebar-reveal').blur();
+  });
+
   //SIDEBAR
   $('.sidebar-reveal').click(function(e) {
     e.preventDefault();
-    if(isDesktop()){
-      $('#sidebar').toggle("slide");
-    } else {
-      $('#sidebar').toggle("blind");
-    }
-    $('.sidebar-reveal').blur();
+    toggleSidebar();
   });
 
   //Opening submenu
