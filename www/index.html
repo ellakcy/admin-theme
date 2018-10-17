@@ -35,8 +35,8 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/panel.css" >
   </head>
 
-  <body>
-    <header>
+  <body class="panel">
+    <header class="panel-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-primary">
           <a class="navbar-brand" href="/">
             <img src="./icons/favicon-32x32.png">
@@ -97,9 +97,9 @@
               </ul>
         </nav><!-- /navbar -->
     </header>
-    <div id="content-main" class="d-flex flex-column flex-md-row align-items-stretch mt-auto">
+    <div id="content-main" class="d-flex flex-column flex-md-row align-items-stretch order-1">
 
-      <aside id="sidebar" class="bg-dark order-1 text-light">
+      <aside id="sidebar" class="bg-dark text-light">
 
        <!-- profile item -->
        <div id="sidebarHeader" class="row text-center border border-bottom-1 border-top-0 border-left-0 border-right-0 border-light mb-1" itemscope itemtype="http://schema.org/Person">
@@ -111,10 +111,10 @@
               <div class="text-center"><a href="/profile/edit">Edit Profile</a>&nbsp;-&nbsp;<a href="/logout" class="text-danger">Logout</a></div>
             </div>
           </div>
-      </div><!-- /profile-item -->
+        </div><!-- /profile-item -->
 
-       <!-- sidebar menu for non-desktop screens -->
-       <div id="sidebarMenus" class="d-lg-none d-xl-none w-100">
+        <!-- sidebar menu for non-desktop screens -->
+        <div id="sidebarMenus" class="d-lg-none d-xl-none w-100">
           <div class="row border border-top-0 border-bottom-1 border-left-0 border-right-0 border-light">
             <button class="btn btn-link sidebar-btn text-light col" data-sidebar-show="sideber-main-nav"><i class="fa fa-home"></i></button>
             <button class="btn btn-link sidebar-btn text-light col" data-sidebar-show="mailList"><i class="fa fa-envelope"></i></button>
@@ -243,10 +243,13 @@
       </aside><!-- sidebar -->
 
        <!-- main content -->
-        <main class="d-flex container-fluid order-2 flex-grow-2">
+        <main id="actual_content" class="d-flex container-fluid">
           Main content
         </main>
         <!-- /main-content -->
+        <footer class="panel-footer">
+          Hello
+        </footer>
     </div>
 <script src="./assets/vendor/jquery.min.js"></script>
 <script src="./assets/vendor/jquery-ui.min.js"></script>

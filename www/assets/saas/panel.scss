@@ -8,34 +8,10 @@ $grid-breakpoints: (
 
 @import "includes/_breakpoints.scss";
 
-html,body{
-    width:100%;
-    height:100%;
-}
-
-#sidebar{
-
-  @include media-breakpoint-up('xs') {
-    width:100%;
-    display:none;
-  }
-
-  @include media-breakpoint-up('md') {
-    width: 35%;
-    display:none;
-  }
-
-  @include media-breakpoint-up('lg') {
-    width: 20%;
-    display:flex;
-    flex-direction: column;
-  }
-
-  @include media-breakpoint-up('xl') {
-    width: 18%;
-    display:flex;
-    flex-direction: column;
-  }
+.panel{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 main{
@@ -43,15 +19,17 @@ main{
 }
 
 #content-main {
-  min-height: 100%;
+  min-height: 100vh;
   position: relative;
 }
 
-#sidebar-content {
-  min-height:100%;
-  min-width:100%;
-  margin:0px;
-  padding:0px;
+.panel-header{
+  flex:0;
+  display:flex;
+  width:100%;
+  nav{
+    width:100%;
+  }
 }
 
 .header-dropdown {
@@ -70,6 +48,32 @@ main{
 }
 
 /* Sidebar Css */
+
+#sidebar{
+
+  @include media-breakpoint-up('xs') {
+    width:100%;
+    display:none;
+  }
+
+  @include media-breakpoint-up('md') {
+    width: 35%;
+    display:none;
+  }
+
+  @include media-breakpoint-up('lg') {
+    width: 20%;
+    display:flex;
+    flex-direction: column;
+  }
+}
+
+#sidebar-content {
+  min-height:100%;
+  min-width:100%;
+  margin:0px;
+  padding:0px;
+}
 
 .sidebar-btn:hover{
   background-color:#fff !important;
@@ -148,4 +152,10 @@ main{
 
 .menu-open[data-menu-open=false] .open-indicator .oppened {
   display:none;
+}
+
+.panel-footer{
+  flex:3;
+  width:100%;
+  text-align: center;
 }
