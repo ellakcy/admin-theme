@@ -34,7 +34,9 @@ var boolVal=function(value){
 
 var toggleSidebar=function(){
   if(isDesktop()){
-    $('#sidebar').toggle("slide");
+    $('#sidebar').toggle("slide",function(e){
+      $('#main_content').toggleClass('full_width');
+    });
   } else {
     $('#sidebar').toggle("blind");
   }

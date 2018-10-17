@@ -97,7 +97,7 @@
               </ul>
         </nav><!-- /navbar -->
     </header>
-    <div id="content-main" class="d-flex flex-column flex-md-row align-items-stretch order-1">
+    <div id="content-wrapper" class="d-flex flex-column flex-md-row align-items-stretch order-1">
 
       <aside id="sidebar" class="bg-dark text-light">
 
@@ -243,14 +243,12 @@
       </aside><!-- sidebar -->
 
        <!-- main content -->
-        <main id="actual_content" class="d-flex container-fluid">
-          Main content
-        </main>
-        <!-- /main-content -->
-        <footer class="panel-footer">
-          Hello
-        </footer>
+        <div id="main_content" class="d-flex container-fluid">
+          <main class="row">Main content</main>
+        </div>
+
     </div>
+
 <script src="./assets/vendor/jquery.min.js"></script>
 <script src="./assets/vendor/jquery-ui.min.js"></script>
 <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
