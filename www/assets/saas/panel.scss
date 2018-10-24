@@ -75,6 +75,10 @@ $grid-breakpoints: (
   @include media-breakpoint-up('md') {
     width: 35%;
     display:none;
+    height:100vh;
+    position:fixed;
+    float:right;
+    z-index:1000;
   }
 
   @include media-breakpoint-up('lg') {
@@ -103,32 +107,32 @@ $grid-breakpoints: (
   display: none !important;
   min-height:100%;
   max-height:100%;
-}
+  ul{
+    list-style: none;
+  }
 
-.sidedar-sm ul{
-  list-style: none;
+  nav {
+   .nav-link{
+      span {
+       float:left;
+       text-align:left;
+      }
+   }
+   .nav-link:hover {
+     color: #00008B !important;
+   }
+ }
 }
 
 .sidedar-sm[data-sidebar-sm-display="true"]{
   position: relative;
   display:block !important;
   margin: 5px;
-  width:100%;
 
   @include media-breakpoint-up(sm) {
-    width:100%;
     display:none;
     max-height:20em;
   }
-}
-
-.sidebar-menu nav .nav-link span {
-  float:left;
-  text-align:left;
-}
-
-.sidebar-menu .nav-link:hover {
-  color: #00008B !important;
 }
 
 .sidebar-menu {
