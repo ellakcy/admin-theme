@@ -79,6 +79,9 @@ var onResizeComplete=function(){
   $('.sidebar-reveal').blur();
 }
 
+// Glolal use indicator whether the window has been resized
+var resizeId=null;
+
 $(document).ready(function(){
 
   //Intial Bootstraping code
