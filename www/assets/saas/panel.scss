@@ -93,32 +93,30 @@ $grid-breakpoints: (
   }
 }
 
-#sidebar-content {
-
-  .sidebar-sm[data-sidebar-sm-display="false"]{
+.sidebar-sm[data-sidebar-sm-display="false"]{
     display: none !important;
+}
+
+.sidebar-sm {
+  display: none !important;
+  ul{
+    list-style: none;
   }
 
-  .sidebar-sm {
-    display: none !important;
-    ul{
-      list-style: none;
-    }
-
-    nav {
-     .nav-link{
-        span {
-         float:left;
-         text-align:left;
-        }
-     }
-     .nav-link:hover {
-       color: #00008B !important;
-     }
+  nav {
+   .nav-link{
+      span {
+       float:left;
+       text-align:left;
+      }
    }
-  }
+   .nav-link:hover {
+     color: #00008B !important;
+   }
+ }
+}
 
-  .sidebar-sm[data-sidebar-sm-display="true"]{
+.sidebar-sm[data-sidebar-sm-display="true"]{
     position: relative;
     display:block !important;
     margin: 5px;
@@ -126,7 +124,11 @@ $grid-breakpoints: (
     @include media-breakpoint-up(sm) {
       display:none;
     }
-  }
+}
+
+
+#sidebarContent{
+  overflow:scroll;
 }
 
 .sidebar-btn:hover{
@@ -151,7 +153,6 @@ $grid-breakpoints: (
 
 .sidebar-list {
   height: 100%;
-  overflow-y: scroll;
   border-radius: .25rem;
 
   li {

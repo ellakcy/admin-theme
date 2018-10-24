@@ -64,6 +64,21 @@ var sidebarBootstrap=function(){
  }
 }
 
+/**
+* Code that runs when the resize is complete
+*/
+var onResizeComplete=function(){
+  if(isDesktop()){
+    console.log("Switched to Desktop");
+    $('#sidebar').show("slide");
+    $(".sidebar-sm").attr('data-sidebar-sm-display',false);
+    $("#sidebar-main-nav").attr('data-sidebar-sm-display',true);
+  }else{
+    $("#sidebar").hide("blind");
+  }
+  $('.sidebar-reveal').blur();
+}
+
 $(document).ready(function(){
 
   //Intial Bootstraping code
@@ -73,15 +88,10 @@ $(document).ready(function(){
 
   // Events on screen change
   $(window).on('resize orientationChange', function(event) {
-    if(isDesktop()){
-      console.log("Switched to Desktop");
-      $('#sidebar').show("slide");
-      $(".sidebar-sm").attr('data-sidebar-sm-display',false);
-      $("#sidebar-main-nav").attr('data-sidebar-sm-display',true);
-    }else{
-      $("#sidebar").hide("blind");
+    if(resizeId){
+      clearTimeout(resizeId);
     }
-    $('.sidebar-reveal').blur();
+    resizeId = setTimeout(onResizeComplete, 500);
   });
 
   //SIDEBAR
