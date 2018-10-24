@@ -63,10 +63,16 @@ $(document).ready(function(){
     console.log(e);
   })
 
+
+  $('.gotoTop').fadeOut();
+
   // Events on screen change
   $(window).on('resize orientationChange', function(event) {
     if(isDesktop()){
+      console.log("Switched to Desktop");
       $('#sidebar').show("slide");
+      $(".sidebar-sm").attr('data-sidebar-sm-display',false);
+      $("#sidebar-main-nav").attr('data-sidebar-sm-display',true);
     }else{
       $("#sidebar").hide("blind");
     }
@@ -97,7 +103,7 @@ $(document).ready(function(){
     var href=getElementFromIdProvidedInDataAttribute(this,"data-sidebar-show");
 
     if(href && !boolVal($(href).attr('data-sidebar-sm-display'))){
-      $('.sidedar-sm[data-sidebar-sm-display="true"]').toggle("slide",function(){
+      $('.sidebar-sm[data-sidebar-sm-display="true"]').toggle("slide",function(){
         $(this).attr('data-sidebar-sm-display',false);
       });
 
@@ -110,10 +116,21 @@ $(document).ready(function(){
 
   });
 
+
+  // Go to top Button
   $(".gotoTop").on('click',function(e){
     e.preventDefault();
     $("body,html").animate({scrollTop:0},800,function(){
       console.log($(this).scrollTop());
     });
   });
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop()>0 && isDesktop()) {
+        $('.gotoTop').fadeIn();
+    } else {
+      $('.gotoTop').fadeOut();
+    }
+ });
+
 });
