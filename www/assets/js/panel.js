@@ -108,5 +108,12 @@ $(document).ready(function(){
       console.log("Not shown");
     }
 
-  })
+  });
+
+  $(".gotoTop").on('click',function(e){
+    e.preventDefault();
+    $("body,html").animate({scrollTop:0},800,function(){
+      console.log($(this).scrollTop());
+    });
+  });
 });
