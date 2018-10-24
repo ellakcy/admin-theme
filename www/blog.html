@@ -97,9 +97,9 @@
               </ul>
         </nav><!-- /navbar -->
     </header>
-    <div id="content-wrapper" class="d-flex flex-column flex-md-row align-items-stretch order-1">
+    <div id="content-wrapper">
 
-      <aside id="sidebar" class="bg-dark text-light">
+      <aside id="sidebar" class="d-flex flex-column bg-dark text-light">
 
        <!-- profile item -->
        <div id="sidebarHeader" class="row text-center border border-bottom-1 border-top-0 border-left-0 border-right-0 border-light mb-1" itemscope itemtype="http://schema.org/Person">
@@ -116,13 +116,14 @@
         <!-- sidebar menu for non-desktop screens -->
         <div id="sidebarMenus" class="d-lg-none d-xl-none w-100">
           <div class="row border border-top-0 border-bottom-1 border-left-0 border-right-0 border-light">
-            <button class="btn btn-link sidebar-btn text-light col" data-sidebar-show="sideber-main-nav"><i class="fa fa-home"></i></button>
+            <button class="btn btn-link sidebar-btn text-light col" data-sidebar-show="sidebar-main-nav"><i class="fa fa-home"></i></button>
             <button class="btn btn-link sidebar-btn text-light col" data-sidebar-show="mailList"><i class="fa fa-envelope"></i></button>
             <button class="btn btn-link sidebar-btn text-light col"><i class="fa fa-bullhorn"></i></button>
           </div>
         </div>
         <!-- content to get shown oon the sidebar -->
-          <nav id="sidebar-main-nav" class="nav flex-column main-navsi sidebar-sm" data-sidebar-sm-display="true" >
+        <div id="sidebarContent" class="flex-column align-items-stretch">
+          <nav id="sidebar-main-nav" class="nav flex-column main-navs sidebar-sm" data-sidebar-sm-display="true" >
               <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#static"><span>Static Pages</span><span class="float-right open-indicator"></span></a>
               <div id="#static" data-menu-open="true" class="sidebar-menu sidebar-menu-level-1">
                 <nav class="nav flex-column">
@@ -171,7 +172,7 @@
               <a class="nav-link active text-light border-bottom-0 border-light" href="#"><span>Item 2</span></a>
         </nav>
 
-          <div id="mailList" class="flex-column sidebar-sm bg-light d-md-none d-lg-none d-xl-none text-dark" style="border-radius: 15px;">
+          <div id="mailList" class="sidebar-sm flex-column bg-light d-md-none d-lg-none d-xl-none text-dark" style="border-radius: 15px;">
             <ul class="list-group sidebar-list">
               <li class="list-group-item">
                 <a class="list-link" href="#">
@@ -240,6 +241,7 @@
                 </a>
               </li>
             </ul>
+        </div>
         </div>
       </aside><!-- sidebar -->
 

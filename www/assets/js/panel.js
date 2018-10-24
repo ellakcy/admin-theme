@@ -32,6 +32,9 @@ var boolVal=function(value){
   return $.inArray(value, falseValues) == -1
 }
 
+/**
+* Shiow abd Hide sidebar
+*/
 var toggleSidebar=function(){
   if(isDesktop()){
     $('#sidebar').toggle("slide",function(e){
@@ -44,26 +47,28 @@ var toggleSidebar=function(){
 }
 
 /**
-* Bootstraping empty sidebar indicators
+* Bootstraping Sidebar and add missing htl elements
 */
 var sidebarBootstrap=function(){
+
+  //Indicators
   $(".menu-open .open-indicator:empty").html("<span class=\"oppened\">-</span><span class=\"closed\">+</span>");
   $(".menu-open").each(function(){
     var elem=$(this);
     var hrefOfTheMenuToOpen=getElementFromIdProvidedInDataAttribute(elem,"data-sidebar-toggle");
     elem.attr("data-menu-open",$(hrefOfTheMenuToOpen).is(":visible"));
-  })
+  });
+
+  if( !$(".sidebar-sm").data().hasOwnProperty("sidebar-sm-display") ){
+     $(".sidebar-sm").data("sidebar-sm-display",false);
+ }
 }
 
 $(document).ready(function(){
+
+  //Intial Bootstraping code
   bsBreakpoints.init();
   sidebarBootstrap();
-
-  $(window).on('init.bs.breakpoint', function (e) {
-    console.log(e);
-  })
-
-
   $('.gotoTop').fadeOut();
 
   // Events on screen change
@@ -103,17 +108,18 @@ $(document).ready(function(){
     var href=getElementFromIdProvidedInDataAttribute(this,"data-sidebar-show");
 
     if(href && !boolVal($(href).attr('data-sidebar-sm-display'))){
-      $('.sidebar-sm[data-sidebar-sm-display="true"]').toggle("slide",function(){
+
+      $('.sidebar-sm').hide("slide",function(){
         $(this).attr('data-sidebar-sm-display',false);
       });
 
       $(href).toggle("slide",function(){
         $(this).attr('data-sidebar-sm-display',true);
-      })
+      });
+
     } else {
       console.log("Not shown");
     }
-
   });
 
 
