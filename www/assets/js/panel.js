@@ -59,9 +59,10 @@ var sidebarBootstrap=function(){
     elem.attr("data-menu-open",$(hrefOfTheMenuToOpen).is(":visible"));
   });
 
-  if( !$(".sidebar-sm").data().hasOwnProperty("sidebar-sm-display") ){
-     $(".sidebar-sm").data("sidebar-sm-display",false);
+  if( !$(".sidebar-sm").attr("data-sidebar-sm-display") ){
+     $(".sidebar-sm").attr("data-sidebar-sm-display",false);
  }
+
 }
 
 /**
@@ -105,14 +106,18 @@ $(document).ready(function(){
 
   //Opening submenu
   $('.menu-open').click(function(e){
+
     e.preventDefault();
     var self=$(this);
     var href=self.attr("data-sidebar-toggle");
+    console.log(href);
     href=document.getElementById(href);
+
     $(href).slideToggle("slow",function(){
       $(href).attr("data-menu-open",$(href).is(":visible"));
       $(self).attr("data-menu-open",$(href).is(":visible"));
     });
+
   });
 
 
