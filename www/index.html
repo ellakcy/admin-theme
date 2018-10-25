@@ -100,6 +100,7 @@
     <div id="content-wrapper" class="d-flex flex-column flex-md-row align-items-stretch order-1">
 
       <aside id="sidebar" class="bg-dark text-light">
+        <div class="d-flex flex-column"><!--sidebar wrapper -->
 
        <!-- profile item -->
        <div id="sidebarHeader" class="row text-center border border-bottom-1 border-top-0 border-left-0 border-right-0 border-light mb-1" itemscope itemtype="http://schema.org/Person">
@@ -121,6 +122,8 @@
             <button class="btn btn-link sidebar-btn text-light col"><i class="fa fa-bullhorn"></i></button>
           </div>
         </div>
+        <div id="sidebarContent" class="flex-column align-items-stretch">
+
         <!-- content to get shown oon the sidebar -->
           <nav id="sidebar-main-nav" class="nav flex-column main-navsi sidedar-sm" data-sidebar-sm-display="true" >
               <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#static"><span>Static Pages</span><span class="float-right open-indicator"></span></a>
@@ -241,6 +244,8 @@
               </li>
             </ul>
         </div>
+      </div>
+      </div>
       </aside><!-- sidebar -->
 
        <!-- main content -->
