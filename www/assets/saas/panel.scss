@@ -8,10 +8,15 @@ $grid-breakpoints: (
 
 @import "includes/_breakpoints.scss";
 
-.panel{
+.panel {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+
+.panel.theme-dark {
+  background-color: #000;
+  color: rgb(200,200,200);
 }
 
 #content-wrapper {
