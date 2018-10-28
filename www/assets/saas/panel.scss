@@ -214,3 +214,15 @@ $grid-breakpoints: (
     opacity:0.5;
   }
 }
+
+.blog {
+  padding: 15px;
+
+  article {
+    text-align:justify;
+    width: 100%;
+    h1 {
+      text-align: center;
+    }
+  }
+}

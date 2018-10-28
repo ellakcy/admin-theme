@@ -179,10 +179,10 @@ $(document).ready(function(){
   });
 
   $(window).scroll(function() {
-    if ($(this).scrollTop()>0 && isDesktop()) {
-        $('#toolboxScroll').fadeIn();
+    if ($(this).scrollTop()>0) {
+        $('.gotoTop').fadeIn();
     } else {
-      $('#toolboxScroll').fadeOut();
+      $('.gotoTop').fadeOut();
     }
  });
 
