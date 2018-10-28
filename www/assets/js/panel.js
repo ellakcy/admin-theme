@@ -47,23 +47,40 @@ var toggleSidebar=function(){
 }
 
 /**
-* Bootstraping Sidebar and add missing htl elements
+* Logic That Hides Sidebar on Small Screens
+*/
+var hideSidebarOnSmall=function(){
+  $("#sidebar").hide("blind",function(){
+    if($(window).scrollTop()>0){
+      $('#toolboxScroll').fadeIn();
+    }
+  });
+}
+
+/**
+* Bootstraping Sidebar and add missing html elements & Attributes
 */
 var sidebarBootstrap=function(){
-  //Indicators
+
+  //Add Missing Menu Open or close Indicators
   $(".menu-open .open-indicator:empty").html("<span class=\"oppened\">-</span><span class=\"closed\">+</span>");
-  $(".menu-open").each(function(){
+  $(".menu-open").each(function() {
     var elem=$(this);
     var hrefOfTheMenuToOpen=getElementFromIdProvidedInDataAttribute(elem,"data-sidebar-toggle");
     elem.attr("data-menu-open",$(hrefOfTheMenuToOpen).is(":visible"));
   });
 
-  if( !$(".sidebar-sm").attr("data-sidebar-sm-display") ){
-     $(".sidebar-sm").attr("data-sidebar-sm-display",false);
-  }
+  // Boostrap Sidebar
+  $(".sidebar-sm").each(function(){
+    var isShown=boolVal($(this).attr("data-sidebar-sm-display"));
+    console.log(this,isShown);
+    if(!isShown){
+      $(this).attr("data-sidebar-sm-display","false")
+    }
+  });
 
-  if(!isDesktop()){
-    $("#sidebar").hide("blind");
+  if( !isDesktop() ){
+    hideSidebarOnSmall();
   }
 }
 
@@ -71,14 +88,22 @@ var sidebarBootstrap=function(){
 * Code that runs when the resize is complete
 */
 var onResizeComplete=function(){
-  if(isDesktop()){
-    console.log("Switched to Desktop");
+  if( isDesktop() ) {
     $('#sidebar').show("slide");
-    $(".sidebar-sm").attr('data-sidebar-sm-display',false);
-    $("#sidebar-main-nav").attr('data-sidebar-sm-display',true);
-  }else{
-    $("#sidebar").hide("blind");
+
+    $(".sidebar-sm").each(function(){
+      if( !boolVal($(this).attr("data-sidebar-sm-display")) ){
+         $(this).attr("data-sidebar-sm-display","false");
+      }
+    });
+
+  } else {
+    hideSidebarOnSmall();
   }
+
+
+  $("#sidebar-main-nav").attr('data-sidebar-sm-display',true);
+
   $('.sidebar-reveal').blur();
 }
 
@@ -155,9 +180,9 @@ $(document).ready(function(){
 
   $(window).scroll(function() {
     if ($(this).scrollTop()>0 && isDesktop()) {
-        $('.gotoTop').fadeIn();
+        $('#toolboxScroll').fadeIn();
     } else {
-      $('.gotoTop').fadeOut();
+      $('#toolboxScroll').fadeOut();
     }
  });
 
