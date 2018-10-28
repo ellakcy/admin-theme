@@ -50,7 +50,6 @@ var toggleSidebar=function(){
 * Bootstraping Sidebar and add missing htl elements
 */
 var sidebarBootstrap=function(){
-
   //Indicators
   $(".menu-open .open-indicator:empty").html("<span class=\"oppened\">-</span><span class=\"closed\">+</span>");
   $(".menu-open").each(function(){
@@ -61,8 +60,11 @@ var sidebarBootstrap=function(){
 
   if( !$(".sidebar-sm").attr("data-sidebar-sm-display") ){
      $(".sidebar-sm").attr("data-sidebar-sm-display",false);
- }
+  }
 
+  if(!isDesktop()){
+    $("#sidebar").hide("blind");
+  }
 }
 
 /**
