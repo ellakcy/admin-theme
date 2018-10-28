@@ -70,7 +70,7 @@ $grid-breakpoints: (
   @include media-breakpoint-up('xs') {
     width:100%;
     position:fixed;
-    height:100%;
+    height: calc(100% - 35px);
     z-index:1000;
   }
 
@@ -97,8 +97,13 @@ $grid-breakpoints: (
     display: none !important;
 }
 
+.sidebar-sm[data-sidebar-sm-display="true"]{
+    position: relative;
+    display:block !important;
+    margin: 5px;
+}
+
 .sidebar-sm {
-  display: none !important;
   ul{
     list-style: none;
   }
@@ -116,19 +121,20 @@ $grid-breakpoints: (
  }
 }
 
-.sidebar-sm[data-sidebar-sm-display="true"]{
-    position: relative;
-    display:block !important;
-    margin: 5px;
-
-    @include media-breakpoint-up(sm) {
-      display:none;
-    }
+.sidebar-sm .main-nav{
+  display:block;
 }
 
+.sidebar-sm .main-nav[data-sidebar-sm-display="false"]{
+  display:none !important;
+}
 
 #sidebarContent{
   overflow:scroll;
+
+  @include media-breakpoint-up('sm') {
+    height: calc( 100vh - 39px - 165px);
+  }
 }
 
 .sidebar-btn:hover{

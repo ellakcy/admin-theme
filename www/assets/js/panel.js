@@ -123,23 +123,25 @@ $(document).ready(function(){
 
   $("#sidebarMenus div button").click(function(e){
     e.preventDefault();
+
     var href=getElementFromIdProvidedInDataAttribute(this,"data-sidebar-show");
+    var revealed=boolVal($(href).attr('data-sidebar-sm-display'));
 
-    if(href && !boolVal($(href).attr('data-sidebar-sm-display'))){
+    $('.sidebar-sm').hide("slide",function(){
+      $(this).attr('data-sidebar-sm-display',"false");
+    });
 
-      $('.sidebar-sm').hide("slide",function(){
-        $(this).attr('data-sidebar-sm-display',false);
-      });
+    if(href){
 
-      $(href).toggle("slide",function(){
-        $(this).attr('data-sidebar-sm-display',true);
-      });
+      var callback=function(){
+        $(this).attr('data-sidebar-sm-display',"true");
+      };
+      $(href).show("slide",callback);
 
     } else {
       console.log("Not shown");
     }
   });
-
 
   // Go to top Button
   $(".gotoTop").on('click',function(e){
