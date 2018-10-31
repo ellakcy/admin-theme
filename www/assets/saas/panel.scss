@@ -231,3 +231,56 @@ $grid-breakpoints: (
     }
   }
 }
+
+.box {
+  position: relative;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  /*Header*/
+  .box-header {
+    display: block;
+    position:relative;
+    box-sizing: border-box;
+    height: 3em;
+    border-bottom: 1px solid black;
+    padding: 0 !important;
+
+    h1,h2,h3,h4,h5,h6 {
+      display:inline-block;
+      font-size: 2em;
+      float:left;
+      line-height: 2em;
+      margin-left: 1px;
+    }
+
+    /* Wrapper For Button Groups */
+    .box-toolbox {
+      position:absolute;
+      top: 5px;
+      right:10px;
+      display:inline-block;
+      float: right;
+    }
+
+  }
+
+  .box-header.bg-primary {
+    h1,h2,h3,h4,h5,h6 {
+      color: rgb(253,253,253);
+    }
+  }
+
+  .box-footer {
+    display: block;
+    position:relative;
+    border-top: 1px solid black;
+  }
+
+  .box-content {
+    display: block;
+    position:relative;
+    width:100%;
+  }
+}
