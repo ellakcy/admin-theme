@@ -6,8 +6,10 @@ const minifyCss = require('gulp-minify-css');
 const rename = require('gulp-rename');
 const fs   = require('fs');
 const sass = require('gulp-sass');
+const htmlbeautify = require('gulp-html-beautify');
 
 
+/*################## Config ####################*/
 const frontend_folder="./www/assets";
 const vendor_folder=`${frontend_folder}/vendor`;
 const release_folder='./vendor';
@@ -21,6 +23,7 @@ const frontent_dev_folder_css=`${frontend_folder}/css`
 const frontend_dev_folder_saas=`${frontend_folder}/saas`
 
 const frontend_prod_folder_sass=`${serve_production_location}/css`
+
 /*################################### Installing Dependencies ###############################*/
 
 //Move Bootstrap
@@ -62,6 +65,14 @@ gulp.task('move_responsive_utils',function(done){
   gulp.src(path).pipe(gulp.dest(vendor_folder));
   done();
 })
+
+
+/*############### Builds #####################*/
+
+gulp.task('htmlbeautify', function(done){
+  gulp.src('./www/*.html').pipe(htmlbeautify()).pipe(gulp.dest('./www/'));
+  done();
+});
 
 gulp.task('minify',function(done){
   gulp.src(`${frontent_dev_folder_js}/panel.js`).pipe(minifyJS()).pipe(uglify({mangle: false})).pipe(gulp.dest(release_folder));
