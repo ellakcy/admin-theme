@@ -8,6 +8,12 @@ $grid-breakpoints: (
 
 @import "includes/_breakpoints.scss";
 
+$secondary-light: #ecf0f5;
+
+.bg-secondary-light{
+  background-color: $secondary-light;
+}
+
 .panel {
   display: flex;
   flex-direction: column;
@@ -232,11 +238,15 @@ $grid-breakpoints: (
   }
 }
 
+/*############# Theme Element: BOX ##########*/
 .box {
   position: relative;
   margin: 2px;
   border: 1px solid black;
   border-radius: 5px;
+  padding: 0 !important;
+  background-color: white;
+
 
   /*Header*/
   .box-header {
@@ -266,21 +276,29 @@ $grid-breakpoints: (
 
   }
 
-  .box-header.bg-primary {
-    h1,h2,h3,h4,h5,h6 {
-      color: rgb(253,253,253);
-    }
-  }
-
   .box-footer {
     display: block;
     position:relative;
     border-top: 1px solid black;
+    clear:both;
   }
 
   .box-content {
     display: block;
     position:relative;
     width:100%;
+    clear:both;
   }
+}
+
+/*Headers*/
+.header-wrapper {
+  border-bottom:1px solid;
+  padding: 0;
+  margin-bottom: 3px;
+
+  h1,h2,h3,h4,h5,h6 {
+    margin: 0px;
+  }
+
 }
