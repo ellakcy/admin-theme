@@ -6,6 +6,11 @@ var isDesktop = function(){
   return !reg.test(bsBreakpoints.detectBreakpoint());
 }
 
+var isTablet=function(){
+  var reg=/x?(M|m)edium/;
+  return reg.test(bsBreakpoints.detectBreakpoint());
+}
+
 /**
 * In many cases we want to retrieve an element that has an id defined in an attribute.
 * @param {Element} element The element to retrieve the id.
@@ -88,22 +93,28 @@ var sidebarBootstrap=function(){
 * Code that runs when the resize is complete
 */
 var onResizeComplete=function(){
-  if( isDesktop() ) {
-    $('#sidebar').show("slide");
+if(isTablet()) {
+    $('#sidebar').hide("slide");
 
     $(".sidebar-sm").each(function(){
       if( !boolVal($(this).attr("data-sidebar-sm-display")) ){
          $(this).attr("data-sidebar-sm-display","false");
       }
     });
+  } else if( isDesktop() ) {
+      $('#sidebar').show("slide");
+
+      $(".sidebar-sm").each(function(){
+        if( !boolVal($(this).attr("data-sidebar-sm-display")) ){
+           $(this).attr("data-sidebar-sm-display","false");
+        }
+      });
 
   } else {
     hideSidebarOnSmall();
   }
 
-
   $("#sidebar-main-nav").attr('data-sidebar-sm-display',true);
-
   $('.sidebar-reveal').blur();
 }
 
