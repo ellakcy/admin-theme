@@ -104,6 +104,47 @@ $secondary-light: #ecf0f5;
   }
 }
 
+#sidebarHeader{
+
+  #profile_img {
+    @include media-breakpoint-up('xs') {
+      width:40px;
+      height:40px;
+    }
+
+    @include media-breakpoint-up('md') {
+      width:128px;
+      height:128px;
+    }
+  }
+
+ .sidebar-header-content {
+    @include media-breakpoint-up('xs') {
+      text-align:left;
+      .userInfo{
+        float:left;
+        font-size: 0.95rem;
+      }
+      h4{
+        margin:0px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @include media-breakpoint-up('md') {
+      text-align:center;
+      .userInfo{
+        float:none;
+        font-size: 1.1rem;
+      }
+      h4{
+        font-size: 1.1rem;
+      }
+    }
+ }
+
+}
+
 .sidebar-sm[data-sidebar-sm-display="false"]{
     display: none !important;
 }
