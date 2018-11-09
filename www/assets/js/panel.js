@@ -50,7 +50,7 @@ var toggleSidebar=function(){
 * Logic That Hides Sidebar on Small Screens
 */
 var hideSidebarOnSmall=function(){
-  $("#sidebar").hide("blind",function(){
+  $("#sidebar").hide(function(){
     if($(window).scrollTop()>0){
       $('#toolboxScroll').fadeIn();
     }
