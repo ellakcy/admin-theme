@@ -34,12 +34,12 @@ $secondary-light: #ecf0f5;
 #main_content{
   height:100%;
   float:left;
+
   @include media-breakpoint-up('lg') {
     margin-left:20%;
-    main {
-      width:100%;
-    }
+    width:100%;
   }
+
 }
 
 #main_content.full_width{
@@ -241,12 +241,10 @@ $secondary-light: #ecf0f5;
 /*############# Theme Element: BOX ##########*/
 .box {
   position: relative;
-  margin: 2px;
   border: 1px solid black;
   border-radius: 5px;
   padding: 0 !important;
   background-color: white;
-
 
   /*Header*/
   .box-header {
@@ -292,10 +290,10 @@ $secondary-light: #ecf0f5;
 }
 
 /*Headers*/
-.header-wrapper {
+.title-wrapper {
   border-bottom:1px solid;
   padding: 0;
-  margin-bottom: 3px;
+  margin: 2px;
 
   h1,h2,h3,h4,h5,h6 {
     margin: 0px;
