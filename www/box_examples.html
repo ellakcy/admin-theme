@@ -104,6 +104,7 @@
             <div class="d-flex flex-column">
                 <!--sidebar wrapper -->
 
+
                 <!-- profile item -->
                 <div id="sidebarHeader" class="text-center border border-bottom-1 border-top-0 border-left-0 border-right-0 border-light mb-1" itemscope itemtype="http://schema.org/Person">
                     <div class="col-12">
@@ -123,7 +124,8 @@
                         <button class="btn btn-link sidebar-btn text-light col" data-sidebar-show="mailList"><i class="fa fa-envelope"></i></button>
                         <button class="btn btn-link sidebar-btn text-light col"><i class="fa fa-bullhorn"></i></button>
                     </div>
-                </div>
+                </div> <!-- /sidebarMenus -->
+
                 <div id="sidebarContent" class="flex-column align-items-stretch">
 
                     <!-- content to get shown oon the sidebar -->
@@ -135,14 +137,14 @@
                                 <a class="nav-link text-light" href="./login.html"><span class="float-left text-primary mr-1"><i class="far fa-circle"></i></span><span>Login Page</span></a>
                                 <a class="nav-link text-light" href="./blog.html"><span class="float-left text-primary mr-1"><i class="far fa-circle"></i></span><span>Blog</span></a>
                             </nav>
-                        </div>
+                        </div><!-- /static -->
 
                         <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#items"><span>Theme Special Items</span><span class="float-right open-indicator"></span></a>
                         <div id="#items" data-menu-open="true" class="sidebar-menu sidebar-menu-level-1">
                             <nav class="nav flex-column">
                                 <a class="nav-link text-light" href="./box.html"><span class="float-left mr-1"><i class="fas fa-box"></i></span><span>Html Boxes</span></a>
                             </nav>
-                        </div>
+                        </div><!-- /items -->
 
                         <a class="nav-link text-light menu-open" href="#" data-sidebar-toggle="#collapseExample"><span>Multilevel Menu Example</span><span class="float-right open-indicator"></span></a>
                         <div id="#collapseExample" data-menu-open="false" class="sidebar-menu sidebar-menu-level-1">
@@ -180,7 +182,8 @@
 
                                 <a class="nav-link text-light" href="#item2"><span>Item 2</span></a>
                             </nav>
-                        </div>
+                        </div> <!-- /collapseExample -->
+
                         <a class="nav-link active text-light border-bottom-0 border-light" href="#"><span>Item 2</span></a>
                     </nav>
 
@@ -255,103 +258,106 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> <!-- mailList -->
 
 
-                </div>
-            </div>
+                </div> <!-- /sidebarContent -->
+            </div> <!-- /sidebar wrapper -->
         </aside><!-- sidebar -->
 
         <!-- main content -->
-        <div id="main_content" class="d-flex p-3 bg-secondary-light">
-            <main class="container-fluid">
-                <section>
-                    <div class="col-12 header-wrapper">
-                        <h1>Basic Boxes</h1>
+        <div id="main_content" class="d-flex bg-secondary-light">
+            <main class="container-fluid m-1">
+                <section class="row">
+                    <div class="col-12 title-wrapper">
+                        <h1>Basic Boxes with spaces between them.</h1>
                     </div>
-                    <div class="row">
-                        <div class="box col-12">
-                            <div class="box-header">
-                                <h2>Full width Box with toolbox</h2>
-                                <div class="box-toolbox">
-                                    <div class="btn-group" role="group" aria-label="Box Icons">
-                                        <button type="button" class="btn btn-secondary">1</button>
-                                        <button type="button" class="btn btn-secondary">2</button>
-                                        <button type="button" class="btn btn-secondary">3</button>
-                                        <button type="button" class="btn btn-secondary">4</button>
-                                    </div>
+                    <div class="w-100 mb-2"></div> <!-- /row -->
+
+
+                    <div class="box col-12">
+                        <div class="box-header">
+                            <h2>Full width Box with toolbox</h2>
+                            <div class="box-toolbox">
+                                <div class="btn-group" role="group" aria-label="Box Icons">
+                                    <button type="button" class="btn btn-secondary">1</button>
+                                    <button type="button" class="btn btn-secondary">2</button>
+                                    <button type="button" class="btn btn-secondary">3</button>
+                                    <button type="button" class="btn btn-secondary">4</button>
                                 </div>
                             </div>
-                            <div class="box-content text-center w-100">I take over 12 columns</div>
-                            <div class="box-footer">
-                                footer
-                            </div>
-                        </div> <!-- box -->
-                    </div>
-                    <div class="row">
+                        </div>
+                        <div class="box-content text-center w-100">I take over 12 columns</div>
+                        <div class="box-footer">
+                            footer
+                        </div>
+                    </div> <!-- /box -->
+                    <div class="w-100 mb-1"></div> <!-- /row -->
 
-                        <div class="box col-4">
-                            <div class="box-header text-light bg-primary">
-                                <h2>Info Header</h2>
-                            </div>
-                            <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
-                            <div class="box-footer">footer</div>
-                        </div> <!-- box -->
+                    <div class="box col-6 mr-1">
+                        <div class="box-header text-light bg-primary">
+                            <h2>Info Header</h2>
+                        </div>
+                        <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
+                        <div class="box-footer">footer</div>
+                    </div> <!-- /box -->
 
-                        <div class="box col-4">
-                            <div class="box-header text-light bg-info">
-                                <h2>Primary Header</h2>
-                            </div>
-                            <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
-                            <div class="box-footer">
-                                footer
-                            </div>
-                        </div> <!-- box -->
+                    <div class="box col-6">
+                        <div class="box-header text-light bg-info">
+                            <h2>Primary Header</h2>
+                        </div>
+                        <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
+                        <div class="box-footer">
+                            footer
+                        </div>
+                    </div> <!-- /box -->
 
-                        <div class="box col-4">
-                            <div class="box-header text-light bg-success">
-                                <h2>Sucess Header</h2>
-                            </div>
-                            <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
-                            <div class="box-footer">
-                                footer
-                            </div>
-                        </div> <!-- box -->
+                    <div class="w-100 mb-1"></div>
 
-                        <div class="box col-4">
-                            <div class="box-header text-light bg-danger">
-                                <h2>Sucess Header</h2>
-                            </div>
-                            <div class="box-content">Just place the correct background color to the <code>.box-header</code> element</div>
-                            <div class="box-footer">
-                                footer
-                            </div>
-                        </div> <!-- box -->
+                    <div class="box col-6">
+                        <div class="box-header text-light bg-success">
+                            <h2>Sucess Header</h2>
+                        </div>
+                        <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
+                        <div class="box-footer">
+                            footer
+                        </div>
+                    </div> <!-- /box -->
 
-                        <div class="box col-4">
-                            <div class="box-header text-light bg-warning">
-                                <h2>Warning Header</h2>
-                            </div>
-                            <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
-                            <div class="box-footer">footer</div>
-                        </div> <!-- box -->
+                    <div class="box col-6">
+                        <div class="box-header text-light bg-danger">
+                            <h2>Danger Header</h2>
+                        </div>
+                        <div class="box-content">Just place the correct background color to the <code>.box-header</code> element</div>
+                        <div class="box-footer">
+                            footer
+                        </div>
+                    </div> <!-- /box -->
 
-                        <div class="box col-4">
-                            <div class="box-header text-light bg-dark">
-                                <h2>Dark Header</h2>
-                            </div>
-                            <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
-                            <div class="box-footer">footer</div>
-                        </div> <!-- box -->
-                    </div>
-        </div>
-    </div>
+                    <div class="w-100 mb-1"></div>
 
-    </section>
-    </main>
-    </div>
+                    <div class="box col-6">
+                        <div class="box-header text-light bg-warning">
+                            <h2>Warning Header</h2>
+                        </div>
+                        <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
+                        <div class="box-footer">footer</div>
+                    </div> <!-- /box -->
 
-    </div>
+                    <div class="box col-6">
+                        <div class="box-header text-light bg-dark">
+                            <h2>Dark Header</h2>
+                        </div>
+                        <div class="box-content">Just place the correct background color to the <code>.box-header</code> element </div>
+                        <div class="box-footer">footer</div>
+                    </div> <!-- /box -->
+
+                </section>
+            </main>
+
+        </div> <!-- /main-content -->
+
+    </div> <!-- /content-wrapper -->
 
     <script src="./assets/vendor/jquery.min.js"></script>
     <script src="./assets/vendor/jquery-ui.min.js"></script>
