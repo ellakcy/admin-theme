@@ -95,20 +95,13 @@ var sidebarBootstrap=function(){
 var onResizeComplete=function(){
 if(isTablet()) {
     $('#sidebar').hide("slide");
+    $(".sidebar-sm").attr("data-sidebar-sm-display","false");
+    $("#sidebar-main-nav").attr("data-sidebar-sm-display","true")
 
-    $(".sidebar-sm").each(function(){
-      if( !boolVal($(this).attr("data-sidebar-sm-display")) ){
-         $(this).attr("data-sidebar-sm-display","false");
-      }
-    });
   } else if( isDesktop() ) {
       $('#sidebar').show("slide");
-
-      $(".sidebar-sm").each(function(){
-        if( !boolVal($(this).attr("data-sidebar-sm-display")) ){
-           $(this).attr("data-sidebar-sm-display","false");
-        }
-      });
+      $(".sidebar-sm").attr("data-sidebar-sm-display","false");
+      $("#sidebar-main-nav").attr("data-sidebar-sm-display","true")
 
   } else {
     hideSidebarOnSmall();
@@ -130,6 +123,7 @@ $(document).ready(function(){
 
   // Events on screen change
   $(window).on('resize orientationChange', function(event) {
+    console.log("Resized");
     if(resizeId){
       clearTimeout(resizeId);
     }
