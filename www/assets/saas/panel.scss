@@ -18,6 +18,7 @@ $secondary-light: #ecf0f5;
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  background-color:$secondary-light;
 }
 
 .panel.theme-dark {
@@ -34,6 +35,11 @@ $secondary-light: #ecf0f5;
 #main_content{
   height:100%;
   float:left;
+  background-color:$secondary-light;
+
+  main {
+    background-color:$secondary-light;
+  }
 
   @include media-breakpoint-up('lg') {
     margin-left:20%;
