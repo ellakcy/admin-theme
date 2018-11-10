@@ -1,4 +1,3 @@
-
 /**
  *
  * @licstart  The following is the entire license notice for the
@@ -35,6 +34,9 @@ var isDesktop = function(){
   return !reg.test(bsBreakpoints.detectBreakpoint());
 }
 
+/**
+* Utility function that checks if the screen is on tablet
+*/
 var isTablet=function(){
   var reg=/x?(M|m)edium/;
   return reg.test(bsBreakpoints.detectBreakpoint());
