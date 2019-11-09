@@ -85,6 +85,10 @@ $secondary-light: #ecf0f5;
   float:left;
 }
 
+.fullpage {
+  height: calc(100vh - 60px);
+}
+
 /* Sidebar Css */
 
 #sidebar {
