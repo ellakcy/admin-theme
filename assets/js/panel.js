@@ -25,6 +25,9 @@
  *
  */
 
+ import $ from 'jquery';
+ import _ from 'lodash';
+ import bsBreakpoints from 'bs-breakpoints'
 
 /**
 * Utility function that checks if the screen is on desktop

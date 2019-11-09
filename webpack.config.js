@@ -14,10 +14,7 @@ module.exports = {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: "script-loader"
-          }
+          loader: 'babel-loader'
         },
         {
           test: /\.css$/,
@@ -46,13 +43,17 @@ module.exports = {
                     name:  __dirname+'/www/[name].css',
                 }
               },
-              // Creates `style` nodes from JS strings
-              'style-loader',
+              {
+                loader:'style-loader',
+              },
               // Translates CSS into CommonJS
-              'css-loader',
+              {
+                loader:'css-loader'
+              },
               // Compiles Sass to CSS
-              'sass-loader',
-
+              {
+                loader:'sass-loader'
+              },
             ],
         }, 
       ],
