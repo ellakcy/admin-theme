@@ -6,7 +6,7 @@ module.exports = {
         __dirname+'/assets/saas/panel.scss'
     ],
     output: {
-      path: __dirname+'/vendor',
+      path: __dirname+'/www',
       publicPath: '/',
       filename: 'panel.js'
     },
@@ -43,7 +43,7 @@ module.exports = {
               {
                 loader: 'file-loader',
                 options: {
-                    name:  __dirname+'/assets/css/[name].css',
+                    name:  __dirname+'/www/[name].css',
                 }
               },
               // Creates `style` nodes from JS strings
