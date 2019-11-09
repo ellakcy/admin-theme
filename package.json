@@ -27,6 +27,9 @@
     "style-loader": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
     "file-loader": "^4.2.0",
     "gulp": "^4.0.0",
     "gulp-html-beautify": "^1.0.1",
