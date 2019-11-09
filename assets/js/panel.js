@@ -28,6 +28,8 @@
  import $ from 'jquery';
  import _ from 'lodash';
  import bsBreakpoints from 'bs-breakpoints'
+ import 'bootstrap';
+ import '../saas/panel.scss';
 
 /**
 * Utility function that checks if the screen is on desktop

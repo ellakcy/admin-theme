@@ -11,7 +11,7 @@ $grid-breakpoints: (
   xl: 1200px
 ) !default;
 
-@import "includes/_breakpoints.scss";
+@import "bootstrap";
 
 $secondary-light: #ecf0f5;
 

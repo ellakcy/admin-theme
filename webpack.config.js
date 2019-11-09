@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = {
     entry: [
         __dirname+"/assets/js/panel.js",
-        __dirname+'/assets/saas/panel.scss'
     ],
     output: {
       path: __dirname+'/www',
@@ -13,36 +12,19 @@ module.exports = {
     module: {
       rules: [
         {
+           test: /\.css$/,
+           use: [
+            'style-loader',
+            'css-loader',
+           ],
+        },
+        {
           test: /\.js$/,
           loader: 'babel-loader'
         },
         {
-          test: /\.css$/,
-          use: [
-            {
-              loader: "style-loader"
-            },
-            {
-              loader: "css-loader",
-              options: {
-                modules: true,
-                importLoaders: 1,
-                localIdentName: "[name]_[local]_[hash:base64]",
-                sourceMap: true,
-                minimize: true
-              }
-            }
-          ]
-        },
-        {
-            test: /\.s[ac]ss$/i,
+            test: /\.scss$/,
             use: [ 
-              {
-                loader: 'file-loader',
-                options: {
-                    name:  __dirname+'/www/[name].css',
-                }
-              },
               {
                 loader:'style-loader',
               },
@@ -55,7 +37,7 @@ module.exports = {
                 loader:'sass-loader'
               },
             ],
-        }, 
+        },
       ],
     },
     devServer: {
