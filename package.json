@@ -4,19 +4,29 @@
   "description": "Admin HTML/CSS template using Bootstrap",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --compress"
   },
   "keywords": [
     "html",
     "css",
     "admin"
   ],
-  "author": "Desyllas Dimitrios",
+  "author": "Cypriot FOSS Community",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.1",
     "bootstrap": "^4.3.1",
     "bs-breakpoints": "^1.0.0",
+    "css-loader": "^3.2.0",
+    "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1",
+    "saas": "^1.0.0",
+    "script-loader": "^0.7.2",
+    "style-loader": "^1.0.0"
+  },
+  "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-html-beautify": "^1.0.1",
     "gulp-minify": "^3.1.0",
@@ -25,8 +35,10 @@
     "gulp-sass": "^4.0.1",
     "gulp-server-io": "^1.5.1",
     "gulp-uglify": "^3.0.1",
-    "jquery": "^3.4.1",
-    "jquery-ui-dist": "^1.12.1",
-    "saas": "^1.0.0"
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }
