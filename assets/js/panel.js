@@ -26,14 +26,17 @@
  */
 
 import $ from 'jquery';
-import _ from 'lodash';
 import bsBreakpoints from 'bs-breakpoints'
 import 'bootstrap';
-import '../saas/panel.scss';
+import _ from 'lodash';
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid' // https://fontawesome.com/icons?d=gallery&s=solid&m=free
 import '@fortawesome/fontawesome-free/js/regular' // https://fontawesome.com/icons?d=gallery&s=regular&m=free
 import '@fortawesome/fontawesome-free/js/brands' // https://fontawesome.com/icons?d=gallery&s=brands&m=free
+
+import {boolVal,getElementFromIdProvidedInDataAttribute} from '../utils/utils.js';
+
+import '../saas/panel.scss';
 
 
 /**
@@ -50,32 +53,6 @@ var isDesktop = function(){
 var isTablet=function(){
   var reg=/x?(M|m)edium/;
   return reg.test(bsBreakpoints.detectBreakpoint());
-}
-
-/**
-* In many cases we want to retrieve an element that has an id defined in an attribute.
-* @param {Element} element The element to retrieve the id.
-* @param {String} attribute the attribute containing the id.
-*/
-var getElementFromIdProvidedInDataAttribute = function(element, attribute){
-  var href=$(element).attr(attribute);
-  href=document.getElementById(href);
-  return href;
-}
-
-/**
-* Convert a value into a boolean
-* @param {Mixed} value The value to check convert into boolean
-* @return {Boolean}
-*/
-var boolVal=function(value){
-  var falseValues=['false',0,undefined,'0','no','null',null];
-
-  if (typeof value === 'string' || value instanceof String){
-      value=value.toLowerCase();
-  }
-
-  return $.inArray(value, falseValues) == -1
 }
 
 /**
@@ -199,6 +176,7 @@ $(document).ready(function(){
 
     var href=getElementFromIdProvidedInDataAttribute(this,"data-sidebar-show");
     var revealed=boolVal($(href).attr('data-sidebar-sm-display'));
+    console.log($(href).attr('data-sidebar-sm-display'),revealed);
 
     $('.sidebar-sm').hide("slide",function(){
       $(this).attr('data-sidebar-sm-display',"false");
