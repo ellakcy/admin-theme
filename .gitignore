@@ -4,3 +4,6 @@ www-prod
 *_from_*_branch.*
 www/assets/css/panel.css
 www/assets/saas/includes
+www/*.js
+www/*.css
+.vscode
