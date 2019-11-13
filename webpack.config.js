@@ -1,4 +1,5 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: [
@@ -9,6 +10,8 @@ module.exports = {
       publicPath: '/',
       filename: 'panel.js'
     },
+    target: 'node',
+    externals:[nodeExternals()],
     module: {
       rules: [
         {
