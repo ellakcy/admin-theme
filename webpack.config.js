@@ -1,17 +1,14 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: [
-        __dirname+"/assets/js/panel.js",
+       __dirname+"/assets/js/panel.js",
     ],
     output: {
       path: __dirname+'/www',
       publicPath: '/',
       filename: 'panel.js'
     },
-    target: 'node',
-    externals:[nodeExternals()],
     module: {
       rules: [
         {
@@ -27,7 +24,7 @@ module.exports = {
         },
         {
             test: /\.scss$/,
-            use: [ 
+            use: [
               {
                 loader:'style-loader',
               },
@@ -57,6 +54,7 @@ module.exports = {
     },
     devServer: {
         contentBase: path.join(__dirname, 'www'),
+        publicPath:  "/",
         compress: true,
         port: 8000
     }
