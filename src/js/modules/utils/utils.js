@@ -1,5 +1,6 @@
 import $ from 'jquery';
 
+
 /**
 * Convert a value into a boolean
 * @param {Mixed} value The value to check convert into boolean

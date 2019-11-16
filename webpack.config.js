@@ -21,10 +21,6 @@ module.exports = {
            ],
         },
         {
-          test: /\.js$/,
-          loader: 'babel-loader',
-        },
-        {
             test: /\.scss$/,
             use: [
               {
@@ -59,6 +55,11 @@ module.exports = {
                }
               }
             ]
+        },
+        { 
+          test: /\.js$/, 
+          exclude: /node_modules/, 
+          loader: "babel-loader" 
         }
       ],
     },
