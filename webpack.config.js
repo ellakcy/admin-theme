@@ -1,14 +1,20 @@
 const path = require('path');
+const nodeExternals=require('webpack-node-externals');
 
 module.exports = {
     entry: [
-       __dirname+"/assets/js/panel.js",
+       __dirname+"/src/js/panel.js",
     ],
     output: {
       path: __dirname+'/www',
       publicPath: '/',
       filename: 'panel.js'
     },
+    target: 'node', // in order to ignore built-in modules like path, fs, etc.
+    externals:[
+      nodeExternals()
+    ],
+    devtool: 'sourcemaps',
     module: {
       rules: [
         {
@@ -53,7 +59,10 @@ module.exports = {
       ],
     },
     devServer: {
-        contentBase: path.join(__dirname, 'www'),
+        contentBase: [
+          path.join(__dirname, 'src'),
+          path.join(__dirname, 'node_modules'),
+        ],
         publicPath:  "/",
         compress: true,
         port: 8000
