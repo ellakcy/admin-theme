@@ -25,13 +25,7 @@
  *
  */
 
-import $ from 'jquery';
-import bsBreakpoints from 'bs-breakpoints'
-import 'bootstrap';
-import _ from 'lodash';
-import '@fortawesome/fontawesome-free/js/all';
-
-import {boolVal,getElementFromIdProvidedInDataAttribute} from '../utils/utils.js';
+import {boolVal,getElementFromIdProvidedInDataAttribute} from './modules/utils/utils.js';
 
 import '../saas/panel.scss';
 

@@ -3,15 +3,8 @@
 * Licensed under the GPL License (https://www.gnu.org/licenses/gpl.html)
 */
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
-
-@import "bootstrap";
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
 
 $secondary-light: #ecf0f5;
 
