@@ -10,10 +10,6 @@ module.exports = {
       publicPath: '/',
       filename: 'panel.js'
     },
-    target: 'node', // in order to ignore built-in modules like path, fs, etc.
-    externals:[
-      nodeExternals()
-    ],
     devtool: 'sourcemaps',
     module: {
       rules: [
@@ -27,9 +23,6 @@ module.exports = {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          query: {
-            presets: ['es2015']
-          }
         },
         {
             test: /\.scss$/,
@@ -43,7 +36,15 @@ module.exports = {
               },
               // Compiles Sass to CSS
               {
-                loader:'sass-loader'
+                loader:'sass-loader',
+                options: {
+                  sassOptions:{
+                    includePaths: [
+                      "src/saas",
+                      "node_modules/bootstrap/scss"
+                    ]
+                  }
+                }
               },
             ],
         },
